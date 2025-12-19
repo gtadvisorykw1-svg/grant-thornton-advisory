@@ -7,6 +7,8 @@ import {
   ArrowRight, ChevronRight, Building2, FileText, Search, BarChart3
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 
 interface FormData {
   advisoryService: string;
@@ -128,7 +130,9 @@ export default function AdvisoryContactPage() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#4f2d7f] to-[#2b144d] flex items-center justify-center px-4 py-20">
+      <div className="min-h-screen bg-white">
+        <Header />
+        <div className="bg-gradient-to-br from-[#4f2d7f] to-[#2b144d] flex items-center justify-center px-4 py-20 min-h-[80vh]">
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="bg-white rounded-lg p-12 max-w-2xl w-full text-center shadow-2xl">
           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2, type: 'spring', stiffness: 200 }} className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
             <CheckCircle className="w-12 h-12 text-green-600" />
@@ -150,12 +154,15 @@ export default function AdvisoryContactPage() {
           </div>
           <Link href="/" className="text-[#4f2d7f] hover:text-[#ce2c2c] font-medium transition-colors">← Return to Home</Link>
         </motion.div>
+        </div>
+        <Footer />
       </div>
     );
   }
 
   return (
-    <>
+    <div className="min-h-screen bg-white">
+      <Header />
       <section className="bg-gradient-to-br from-[#4f2d7f] to-[#2b144d] text-white py-20">
         <div className="container mx-auto px-4 max-w-7xl">
           <nav className="mb-8">
@@ -410,6 +417,7 @@ export default function AdvisoryContactPage() {
           </div>
         </div>
       </section>
-    </>
+      <Footer />
+    </div>
   );
 }
