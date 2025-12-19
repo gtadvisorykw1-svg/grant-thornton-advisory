@@ -100,11 +100,6 @@ const navigationData = {
       { title: 'Experienced hires', href: '/careers/experienced-hires' },
     ],
   },
-  contact: {
-    label: 'Contact us',
-    href: '/contact',
-    hasDropdown: false,
-  },
   about: {
     label: 'About Us',
     href: '/about',

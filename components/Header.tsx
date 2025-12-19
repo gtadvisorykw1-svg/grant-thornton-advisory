@@ -99,7 +99,6 @@ const navigationData = {
 const simpleNavItems = [
   { label: 'Insights', href: 'https://www.grantthornton.global/en/insights/', external: true },
   { label: 'Careers', href: '/careers' },
-  { label: 'Contact', href: '/contact' },
 ];
 
 // Services detail data for expanded view
