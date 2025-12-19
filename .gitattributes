@@ -1,4 +1,0 @@
-*.png filter=lfs diff=lfs merge=lfs -text
-public/carousl-images/*.png filter=lfs diff=lfs merge=lfs -text
-public/carousl-images/Slide1.png filter=lfs diff=lfs merge=lfs -text
-public/carousl-images/Foster_+_Partners_Completes_National_Bank_of_Kuwait_-topaz-upscale-4x-sharpen.png filter=lfs diff=lfs merge=lfs -text
