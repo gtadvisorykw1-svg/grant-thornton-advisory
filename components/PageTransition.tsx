@@ -18,8 +18,7 @@ const pageVariants = {
     y: 0,
     transition: {
       duration: 0.4,
-      ease: [0.25, 0.1, 0.25, 1],
-      when: 'beforeChildren',
+      ease: [0.25, 0.1, 0.25, 1] as const,
     },
   },
   exit: {
@@ -27,7 +26,7 @@ const pageVariants = {
     y: -20,
     transition: {
       duration: 0.3,
-      ease: [0.25, 0.1, 0.25, 1],
+      ease: [0.25, 0.1, 0.25, 1] as const,
     },
   },
 };
