@@ -203,7 +203,7 @@ export default function ContactAdvisoryPage() {
                 <p style={{ fontSize: '1.4rem', letterSpacing: '0.2em' }} className="text-gray-500 mb-3 uppercase">
                   Reference Number
                 </p>
-                <p className="text-xl" className="text-[#4f2d7f] font-mono font-semibold">
+                <p className="text-xl text-[#4f2d7f] font-mono font-semibold">
                   {referenceNumber}
                 </p>
               </div>
@@ -308,7 +308,7 @@ export default function ContactAdvisoryPage() {
                 href="tel:+96522443900,263"
                 className="flex flex-col items-center justify-center gap-1 p-2 bg-[#4f2d7f]/10 hover:bg-[#4f2d7f]/20 transition-colors"
               >
-                <Phone className="w-6 h-6 text-[#4f2d7f]" className="text-xl" />
+                <Phone className="w-6 h-6 text-[#4f2d7f] text-xl" />
                 <span className="text-xs text-[#4f2d7f] font-medium" style={{ fontSize: '1.2rem' }}>Call</span>
               </a>
               <a
@@ -317,14 +317,14 @@ export default function ContactAdvisoryPage() {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center justify-center gap-1 p-2 bg-[#25D366]/10 hover:bg-[#25D366]/20 transition-colors"
               >
-                <MessageCircle className="w-6 h-6 text-[#25D366]" className="text-xl" />
+                <MessageCircle className="w-6 h-6 text-[#25D366] text-xl" />
                 <span className="text-xs text-[#25D366] font-medium" style={{ fontSize: '1.2rem' }}>WhatsApp</span>
               </a>
               <a
                 href="mailto:info@advisory.kw.gt.com?subject=Advisory%20Services%20Enquiry"
                 className="flex flex-col items-center justify-center gap-1 p-2 bg-[#ce2c2c]/10 hover:bg-[#ce2c2c]/20 transition-colors"
               >
-                <Mail className="w-5 h-5 text-[#ce2c2c]" className="text-lg" />
+                <Mail className="w-5 h-5 text-[#ce2c2c] text-lg" />
                 <span className="text-xs text-[#ce2c2c] font-medium" style={{ fontSize: '1.2rem' }}>Email</span>
               </a>
               <a
@@ -333,7 +333,7 @@ export default function ContactAdvisoryPage() {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center justify-center gap-1 p-2 bg-gray-100 hover:bg-gray-200 transition-colors"
               >
-                <MapPin className="w-6 h-6 text-gray-700" className="text-xl" />
+                <MapPin className="w-6 h-6 text-gray-700 text-xl" />
                 <span className="text-xs text-gray-700 font-medium" style={{ fontSize: '1.2rem' }}>Map</span>
               </a>
             </div>
@@ -515,7 +515,7 @@ export default function ContactAdvisoryPage() {
                         {/* Title and Name Fields */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6" style={{ marginBottom: '3.2rem' }}>
                           <div>
-                            <label htmlFor="title" className="block font-medium text-gray-700 mb-2" className="text-base">
+                            <label htmlFor="title" className="block font-medium text-gray-700 mb-2 text-base">
                               Title <span className="text-[#ce2c2c]">*</span>
                             </label>
                             <select
@@ -536,7 +536,7 @@ export default function ContactAdvisoryPage() {
                               ))}
                             </select>
                             {errors.title && (
-                              <p className="mt-2 text-[#ce2c2c] flex items-center gap-2" className="text-sm">
+                              <p className="mt-2 text-[#ce2c2c] flex items-center gap-2 text-sm">
                                 <AlertCircle style={{ width: '1.6rem', height: '1.6rem' }} />
                                 {errors.title}
                               </p>
@@ -544,7 +544,7 @@ export default function ContactAdvisoryPage() {
                           </div>
 
                           <div>
-                            <label htmlFor="firstName" className="block font-medium text-gray-700 mb-2" className="text-base">
+                            <label htmlFor="firstName" className="block font-medium text-gray-700 mb-2 text-base">
                               First Name <span className="text-[#ce2c2c]">*</span>
                             </label>
                             <input
@@ -560,7 +560,7 @@ export default function ContactAdvisoryPage() {
                               placeholder="John"
                             />
                             {errors.firstName && (
-                              <p className="mt-2 text-[#ce2c2c] flex items-center gap-2" className="text-sm">
+                              <p className="mt-2 text-[#ce2c2c] flex items-center gap-2 text-sm">
                                 <AlertCircle style={{ width: '1.6rem', height: '1.6rem' }} />
                                 {errors.firstName}
                               </p>
@@ -568,7 +568,7 @@ export default function ContactAdvisoryPage() {
                           </div>
 
                           <div>
-                            <label htmlFor="surname" className="block font-medium text-gray-700 mb-2" className="text-base">
+                            <label htmlFor="surname" className="block font-medium text-gray-700 mb-2 text-base">
                               Surname <span className="text-[#ce2c2c]">*</span>
                             </label>
                             <input
@@ -584,7 +584,7 @@ export default function ContactAdvisoryPage() {
                               placeholder="Doe"
                             />
                             {errors.surname && (
-                              <p className="mt-2 text-[#ce2c2c] flex items-center gap-2" className="text-sm">
+                              <p className="mt-2 text-[#ce2c2c] flex items-center gap-2 text-sm">
                                 <AlertCircle style={{ width: '1.6rem', height: '1.6rem' }} />
                                 {errors.surname}
                               </p>
@@ -594,7 +594,7 @@ export default function ContactAdvisoryPage() {
 
                         {/* Company Name */}
                         <div style={{ marginBottom: '3.2rem' }}>
-                          <label htmlFor="companyName" className="block font-medium text-gray-700 mb-2" className="text-base">
+                          <label htmlFor="companyName" className="block font-medium text-gray-700 mb-2 text-base">
                             Company Name <span className="text-[#ce2c2c]">*</span>
                           </label>
                           <div className="relative">
@@ -613,7 +613,7 @@ export default function ContactAdvisoryPage() {
                             />
                           </div>
                           {errors.companyName && (
-                            <p className="mt-2 text-[#ce2c2c] flex items-center gap-2" className="text-sm">
+                            <p className="mt-2 text-[#ce2c2c] flex items-center gap-2 text-sm">
                               <AlertCircle style={{ width: '1.6rem', height: '1.6rem' }} />
                               {errors.companyName}
                             </p>
@@ -622,7 +622,7 @@ export default function ContactAdvisoryPage() {
 
                         {/* Industry Dropdown */}
                         <div style={{ marginBottom: '3.2rem' }}>
-                          <label htmlFor="industry" className="block font-medium text-gray-700 mb-2" className="text-base">
+                          <label htmlFor="industry" className="block font-medium text-gray-700 mb-2 text-base">
                             Industry
                           </label>
                           <select
@@ -644,7 +644,7 @@ export default function ContactAdvisoryPage() {
                         {/* Email and Phone */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginBottom: '3.2rem' }}>
                           <div>
-                            <label htmlFor="email" className="block font-medium text-gray-700 mb-2" className="text-base">
+                            <label htmlFor="email" className="block font-medium text-gray-700 mb-2 text-base">
                               Email Address <span className="text-[#ce2c2c]">*</span>
                             </label>
                             <div className="relative">
@@ -663,7 +663,7 @@ export default function ContactAdvisoryPage() {
                               />
                             </div>
                             {errors.email && (
-                              <p className="mt-2 text-[#ce2c2c] flex items-center gap-2" className="text-sm">
+                              <p className="mt-2 text-[#ce2c2c] flex items-center gap-2 text-sm">
                                 <AlertCircle style={{ width: '1.6rem', height: '1.6rem' }} />
                                 {errors.email}
                               </p>
@@ -671,7 +671,7 @@ export default function ContactAdvisoryPage() {
                           </div>
 
                           <div>
-                            <label htmlFor="phone" className="block font-medium text-gray-700 mb-2" className="text-base">
+                            <label htmlFor="phone" className="block font-medium text-gray-700 mb-2 text-base">
                               Phone Number
                             </label>
                             <div className="relative">
@@ -692,7 +692,7 @@ export default function ContactAdvisoryPage() {
 
                         {/* Preferred Contact Method */}
                         <div style={{ marginBottom: '3.2rem' }}>
-                          <label className="block font-medium text-gray-700 mb-4" className="text-base">
+                          <label className="block font-medium text-gray-700 mb-4 text-base">
                             Preferred Contact Method
                           </label>
                           <div className="flex flex-wrap gap-6">
@@ -705,7 +705,7 @@ export default function ContactAdvisoryPage() {
                                 onChange={handleInputChange}
                                 className="w-5 h-5 text-[#4f2d7f] focus:ring-[#4f2d7f]"
                               />
-                              <span className="text-gray-700" className="text-base">Email</span>
+                              <span className="text-gray-700 text-base">Email</span>
                             </label>
                             <label className="flex items-center gap-3 cursor-pointer">
                               <input
@@ -716,7 +716,7 @@ export default function ContactAdvisoryPage() {
                                 onChange={handleInputChange}
                                 className="w-5 h-5 text-[#4f2d7f] focus:ring-[#4f2d7f]"
                               />
-                              <span className="text-gray-700" className="text-base">Phone Call</span>
+                              <span className="text-gray-700 text-base">Phone Call</span>
                             </label>
                             <label className="flex items-center gap-3 cursor-pointer">
                               <input
@@ -727,14 +727,14 @@ export default function ContactAdvisoryPage() {
                                 onChange={handleInputChange}
                                 className="w-5 h-5 text-[#4f2d7f] focus:ring-[#4f2d7f]"
                               />
-                              <span className="text-gray-700" className="text-base">WhatsApp</span>
+                              <span className="text-gray-700 text-base">WhatsApp</span>
                             </label>
                           </div>
                         </div>
 
                         {/* Message */}
                         <div style={{ marginBottom: '3.2rem' }}>
-                          <label htmlFor="message" className="block font-medium text-gray-700 mb-2" className="text-base">
+                          <label htmlFor="message" className="block font-medium text-gray-700 mb-2 text-base">
                             Message <span className="text-[#ce2c2c]">*</span>
                           </label>
                           <textarea
@@ -750,12 +750,12 @@ export default function ContactAdvisoryPage() {
                             placeholder="Tell us about your business needs and how we can help..."
                           />
                           {errors.message && (
-                            <p className="mt-2 text-[#ce2c2c] flex items-center gap-2" className="text-sm">
+                            <p className="mt-2 text-[#ce2c2c] flex items-center gap-2 text-sm">
                               <AlertCircle style={{ width: '1.6rem', height: '1.6rem' }} />
                               {errors.message}
                             </p>
                           )}
-                          <p className="mt-2 text-gray-500" className="text-sm">
+                          <p className="mt-2 text-gray-500 text-sm">
                             {formData.message.length} / 20 characters minimum
                           </p>
                         </div>
@@ -779,7 +779,7 @@ export default function ContactAdvisoryPage() {
                             </span>
                           </label>
                           {errors.privacyPolicy && (
-                            <p className="text-[#ce2c2c] flex items-center gap-2 ml-9 mb-4" className="text-sm">
+                            <p className="text-[#ce2c2c] flex items-center gap-2 ml-9 mb-4 text-sm">
                               <AlertCircle style={{ width: '1.6rem', height: '1.6rem' }} />
                               {errors.privacyPolicy}
                             </p>
@@ -897,7 +897,7 @@ export default function ContactAdvisoryPage() {
                     <p className="text-gray-600 mb-4" style={{ fontSize: '1.6rem', lineHeight: '1.5' }}>
                       {service.description}
                     </p>
-                    <span className="inline-flex items-center gap-2 text-[#ce2c2c] font-medium group-hover:gap-4 transition-all duration-300" className="text-base">
+                    <span className="inline-flex items-center gap-2 text-[#ce2c2c] font-medium group-hover:gap-4 transition-all duration-300 text-base">
                       Learn More
                       <ArrowRight style={{ width: '1.6rem', height: '1.6rem' }} />
                     </span>

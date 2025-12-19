@@ -41,6 +41,7 @@ const navigationData = {
           { label: 'All Services Overview', href: '/services' },
           { label: 'Advisory Services', href: '/advisory' },
           { label: 'Industries We Serve', href: '/industries' },
+          { label: 'Contact Advisory', href: '/advisory/contact' },
         ],
       },
     ],
@@ -99,6 +100,7 @@ const navigationData = {
 const simpleNavItems = [
   { label: 'Insights', href: 'https://www.grantthornton.global/en/insights/', external: true },
   { label: 'Careers', href: '/careers' },
+  { label: 'Contact Us', href: '/advisory/contact' },
 ];
 
 // Services detail data for expanded view
@@ -212,11 +214,10 @@ const regions = [
 const countriesByRegion: Record<string, { name: string; href: string }[]> = {
   'middle-east': [
     { name: 'Bahrain', href: 'https://www.grantthornton.bh/' },
-    { name: 'Kuwait', href: 'https://www.grantthornton.kw/' },
+    { name: 'Kuwait', href: '/' },
     { name: 'Lebanon', href: 'https://www.grantthornton-lb.com/' },
     { name: 'Oman', href: 'https://www.grantthornton.om/' },
     { name: 'Qatar', href: 'https://www.grantthornton.qa/' },
-    { name: 'Kuwait', href: '/' },
     { name: 'United Arab Emirates', href: 'https://www.grantthornton.ae/' },
     { name: 'Yemen', href: 'https://www.grantthornton-yemen.com/' },
   ],
