@@ -1,0 +1,661 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@glidejs/glide/dist/css/glide.core.min.css";
+@import "@glidejs/glide/dist/css/glide.theme.min.css";
+
+/* GT Walsheim Font Family - Inline declarations */
+@font-face {
+  font-family: 'GT Walsheim';
+  src: url('/fonts/GTWalsheimLC-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Walsheim';
+  src: url('/fonts/GTWalsheimLC-LightOblique.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Walsheim';
+  src: url('/fonts/GTWalsheimLC-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Walsheim';
+  src: url('/fonts/GTWalsheimLC-RegularOblique.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Walsheim';
+  src: url('/fonts/GTWalsheimLC-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Walsheim';
+  src: url('/fonts/GTWalsheimLC-MediumOblique.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Walsheim';
+  src: url('/fonts/GTWalsheimLC-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Walsheim';
+  src: url('/fonts/GTWalsheimLC-BoldOblique.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Walsheim';
+  src: url('/fonts/GTWalsheimLC-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-gt-purple: var(--gt-purple);
+  --color-gt-purple-light: var(--gt-purple-light);
+  --color-gt-purple-dark: var(--gt-purple-dark);
+  --color-gt-red: var(--gt-red);
+  --color-gt-gray-light: var(--gt-gray-light);
+  --color-gt-gray: var(--gt-gray);
+  --font-sans: "GT Walsheim", Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --radius: 8px;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --primary: #4F2D7F;
+  --primary-foreground: #ffffff;
+  --secondary: #F5F5F5;
+  --secondary-foreground: #1a1a1a;
+  --muted: #F5F5F5;
+  --muted-foreground: #6B7280;
+  --accent: #CF2020;
+  --accent-foreground: #ffffff;
+  --destructive: #CF2020;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #4F2D7F;
+  --chart-1: #4F2D7F;
+  --chart-2: #7B4B94;
+  --chart-3: #CF2020;
+  --chart-4: #F5F5F5;
+  --chart-5: #6B7280;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1a1a1a;
+  --sidebar-primary: #4F2D7F;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #F5F5F5;
+  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #4F2D7F;
+  
+  /* GT Brand Colors */
+  --gt-purple: #4F2D7F;
+  --gt-purple-light: #A05DEF;
+  --gt-purple-dark: #281440;
+  --gt-coral: #CF2020;
+  --gt-coral-secondary: #FF5149;
+  --gt-yellow: #FFC230;
+  --gt-teal: #00B4C8;
+  --gt-gray-dark: #CCC4BD;
+  --gt-gray-medium: #E0DCD7;
+  --gt-gray-light: #F2F0EE;
+  
+  /* Button radius per brand guidelines */
+  --radius-button: 4px;
+  --radius-banner: 40px;
+}
+
+.dark {
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  --card: #262626;
+  --card-foreground: #ffffff;
+  --popover: #262626;
+  --popover-foreground: #ffffff;
+  --primary: #7B4B94;
+  --primary-foreground: #ffffff;
+  --secondary: #404040;
+  --secondary-foreground: #ffffff;
+  --muted: #404040;
+  --muted-foreground: #9CA3AF;
+  --accent: #CF2020;
+  --accent-foreground: #ffffff;
+  --destructive: #CF2020;
+  --border: #404040;
+  --input: #404040;
+  --ring: #7B4B94;
+  --chart-1: #7B4B94;
+  --chart-2: #5B2C6F;
+  --chart-3: #CF2020;
+  --chart-4: #404040;
+  --chart-5: #9CA3AF;
+  --sidebar: #262626;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #7B4B94;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #404040;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #404040;
+  --sidebar-ring: #7B4B94;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+    font-size: 88px;
+    line-height: 88px;
+    font-weight: 900;
+  }
+  h2 {
+    font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+  h3 {
+    font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+    font-size: 34px;
+    line-height: 40px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+  h4 {
+    font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 8px;
+  }
+}
+
+/* GT Walsheim Typography Classes - Per Brand Guidelines */
+.heading-hero {
+  font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+  font-size: 88px;
+  line-height: 88px;
+  font-weight: 900;
+}
+
+.heading-xl {
+  font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 700;
+}
+
+.heading-lg {
+  font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.heading-md {
+  font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.heading-sm {
+  font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.body-big {
+  font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 300;
+}
+
+.body-lg {
+  font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.body-md {
+  font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.body-sm {
+  font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.button-text {
+  font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.label-text {
+  font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Font weight utility classes */
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 48px;
+    line-height: 52px;
+  }
+  
+  h2 {
+    font-size: 34px;
+    line-height: 40px;
+  }
+  
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+  .heading-hero {
+    font-size: 48px;
+    line-height: 52px;
+  }
+  
+  .heading-xl {
+    font-size: 34px;
+    line-height: 40px;
+  }
+  
+  .heading-lg {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+/* Brand Button Styles */
+.btn-primary {
+  background-color: var(--gt-coral);
+  color: #ffffff;
+  border-radius: var(--radius-button);
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #B01B1B;
+}
+
+.btn-secondary {
+  background-color: var(--gt-purple);
+  color: #ffffff;
+  border-radius: var(--radius-button);
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--gt-purple-dark);
+}
+
+/* Brand Corner Radius Classes */
+.radius-button {
+  border-radius: 4px;
+}
+
+.radius-card {
+  border-radius: 8px;
+}
+
+.radius-banner {
+  border-radius: 40px;
+}
+
+/* Brand Gradient Classes */
+.gradient-primary-dark {
+  background: linear-gradient(135deg, #281440, #4F2D7F);
+}
+
+.gradient-primary-bright {
+  background: linear-gradient(135deg, #4F2D7F, #A05DEF);
+}
+
+.gradient-coral {
+  background: linear-gradient(135deg, #4F2D7F, #FF5149);
+}
+
+.gradient-teal {
+  background: linear-gradient(135deg, #4F2D7F, #00B4C8);
+}
+
+.gradient-yellow {
+  background: linear-gradient(135deg, #4F2D7F, #FFC230);
+}
+
+/* ===== MICRO-INTERACTIONS & ANIMATIONS ===== */
+
+/* Shimmer animation for skeleton loaders */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Button hover effects */
+.btn-hover-lift {
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.btn-hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -8px rgba(79, 45, 127, 0.4);
+}
+
+.btn-hover-lift:active {
+  transform: translateY(-2px);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.25);
+}
+
+/* Link underline animation */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--gt-coral);
+  transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ===== ENHANCED FOCUS STATES (Accessibility) ===== */
+
+/* Global focus visible styles */
+*:focus-visible {
+  outline: 2px solid var(--gt-purple);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove default focus for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Enhanced focus for interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gt-purple);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(79, 45, 127, 0.2);
+}
+
+/* Focus styles for cards and clickable areas */
+[role="button"]:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid var(--gt-purple);
+  outline-offset: 2px;
+}
+
+/* High contrast focus for dark backgrounds */
+.dark-bg-focus:focus-visible {
+  outline-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+/* ===== SMOOTH SCROLL ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== LOADING STATES ===== */
+.loading-pulse {
+  animation: pulse 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Spinner animation */
+.loading-spinner {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== SCROLL-TRIGGERED ANIMATION CLASSES ===== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1.2s cubic-bezier(0.25, 0.1, 0.25, 1), transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for children */
+.stagger-1 { transition-delay: 0.3s; }
+.stagger-2 { transition-delay: 0.6s; }
+.stagger-3 { transition-delay: 0.9s; }
+.stagger-4 { transition-delay: 1.2s; }
+.stagger-5 { transition-delay: 1.5s; }
+
+/* ===== INTERACTIVE ELEMENT STATES ===== */
+
+/* Service card specific hover */
+.service-card {
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  border: 1px solid transparent;
+}
+
+.service-card:hover {
+  border-color: var(--gt-purple);
+  box-shadow: 0 20px 45px -12px rgba(79, 45, 127, 0.3);
+  transform: translateY(-6px);
+}
+
+/* Icon button hover */
+.icon-btn {
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.icon-btn:hover {
+  transform: scale(1.2);
+}
+
+.icon-btn:active {
+  transform: scale(0.95);
+}
+
+/* Navigation link hover */
+.nav-link {
+  position: relative;
+  transition: color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--gt-coral);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
