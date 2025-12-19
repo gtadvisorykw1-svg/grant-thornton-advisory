@@ -114,6 +114,7 @@ export const GrantThorntonCarousel = () => {
                     priority={idx === 0}
                     quality={90}
                     sizes="100vw"
+                    unoptimized
                   />
 
                   {/* Dynamic Headline Section - Positioned and synchronized with the image */}
