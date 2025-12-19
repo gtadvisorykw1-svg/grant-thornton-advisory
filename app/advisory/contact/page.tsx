@@ -72,15 +72,6 @@ const industries = [
 
 const titles = ['Mr', 'Ms', 'Miss', 'Mrs', 'Dr'];
 
-const serviceCards = [
-  { title: 'Transaction Advisory', description: 'Strategic support for M&A, due diligence, and deal execution to maximize value.', href: '/services/mergers-acquisitions' },
-  { title: 'Business Risk Services', description: 'Internal audit, risk management, and compliance solutions for dynamic businesses.', href: '/services/risk-management' },
-  { title: 'Forensic Services', description: 'Investigation, dispute resolution, and litigation support when you need answers.', href: '/services/fraud-forensics' },
-  { title: 'Restructuring & Recovery', description: 'Navigate financial challenges with expert turnaround and restructuring guidance.', href: '/services/business-strategy' },
-  { title: 'Strategy & Operations', description: 'Transform your business with operational excellence and strategic planning.', href: '/services/business-strategy' },
-  { title: 'Valuations', description: 'Independent valuations for transactions, reporting, and strategic decisions.', href: '/services/valuations' },
-];
-
 export default function AdvisoryContactPage() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
@@ -350,23 +341,7 @@ export default function AdvisoryContactPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#4f2d7f] mb-4">Our Advisory Services</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Discover our full range of advisory capabilities designed to help your business thrive</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {serviceCards.map((service) => (
-              <Link key={service.title} href={service.href} className="group bg-[#f2f1ef] rounded-lg p-6 hover:shadow-lg transition-all duration-300">
-                <h3 className="text-xl font-bold text-[#4f2d7f] mb-3 group-hover:text-[#ce2c2c] transition-colors">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <span className="inline-flex items-center gap-2 text-[#ce2c2c] font-medium group-hover:gap-3 transition-all">Learn More <ArrowRight className="w-4 h-4" /></span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       <section className="bg-[#f2f1ef] py-16">
         <div className="container mx-auto px-4 max-w-7xl">
