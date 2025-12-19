@@ -1,0 +1,8 @@
+# Exclude large backup files
+/public/carousl-images-backup
+
+# Exclude development files
+node_modules
+.git
+.env*.local
+*.log

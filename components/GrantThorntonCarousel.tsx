@@ -99,8 +99,8 @@ export const GrantThorntonCarousel = () => {
       <div ref={glideRef} className="glide">
         {/* 1. HERO BACKGROUND SECTION (.columns-carousel__hero) */}
         <div className="columns-carousel__hero relative w-full h-[600px] md:h-[700px]">
-          <div className="glide__track" data-glide-el="track">
-            <ul className="glide__slides h-full">
+          <div className="glide__track h-full" data-glide-el="track">
+            <ul className="glide__slides !h-full">
               {slides.map((slide, idx) => (
                 <li key={slide.id} className="glide__slide hero-item relative w-full h-[600px] md:h-[700px]">
                   {/* Dark Overlay - Reduced opacity for better clarity */}

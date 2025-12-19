@@ -476,33 +476,7 @@ export function Header() {
                   </div>
                 ))}
               </div>
-              
-              {/* Services Detail Section - Only show for services menu */}
-              {activeMenu === 'services' && (
-                <div className="mt-12 pt-10 border-t border-gray-200">
-                  <div className="grid grid-cols-2 gap-16">
-                    {Object.entries(servicesDetailData).map(([category, services]) => (
-                      <div key={category}>
-                        <h4 className="text-xs font-bold text-[#CF2020] mb-5 uppercase tracking-wider">
-                          {category} — Services Detail
-                        </h4>
-                        <div className="grid grid-cols-2 gap-x-8 gap-y-5">
-                          {Object.entries(services).slice(0, 4).map(([service, details]) => (
-                            <div key={service}>
-                              <h5 className="text-sm font-semibold text-[#4F2D7F] mb-3">{service}</h5>
-                              <ul className="space-y-2">
-                                {details.slice(0, 3).map((detail, idx) => (
-                                  <li key={idx} className="text-xs text-gray-600">{detail}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+
             </div>
           </div>
         )}

@@ -3,7 +3,16 @@
     "allow": [
       "Bash(git init:*)",
       "Bash(dir:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git remote:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(cat:*)",
+      "Bash(git lfs ls-files:*)",
+      "Bash(find:*)",
+      "Bash(git lfs:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nFix carousel images: Remove Git LFS, use regular git\n\n- Remove Git LFS configuration \\(.gitattributes\\)\n- Convert carousel images from LFS to regular git tracking\n- Delete unused large image files\n- Fixes Vercel deployment image loading issue\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)"
     ]
   }
 }
