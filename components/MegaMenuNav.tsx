@@ -238,9 +238,9 @@ export function MegaMenuNav() {
                         </Link>
                       </div>
                     )}
-                    
+
                     <ul className="grid grid-cols-3 gap-x-8">
-                      {data.columns?.map((column, idx) => (
+                      {'columns' in data && data.columns?.map((column, idx) => (
                         <li 
                           key={idx} 
                           className="pt-6 transition-all duration-300"
