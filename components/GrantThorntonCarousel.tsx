@@ -119,9 +119,9 @@ export const GrantThorntonCarousel = () => {
 
                   {/* Dynamic Headline Section - Positioned and synchronized with the image */}
                   <div className="absolute inset-0 z-20 flex flex-col justify-end pb-64 md:pb-80 pointer-events-none">
-                    <div className="container mx-auto px-4 md:px-12 max-w-[1440px]">
+                    <div className="container mx-auto px-16 md:px-24 lg:px-32 max-w-[1440px]">
                       <div className="headline-carousel mb-12 transition-all duration-700 delay-300 opacity-100 translate-y-0 pointer-events-auto">
-                        <h1 className="gt-hero-title heavy text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight max-w-4xl">
+                        <h1 className="gt-hero-title heavy text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight max-w-3xl">
                           {slide.headline}
                         </h1>
                         <h2 className="gt-small-title heavy text-lg md:text-xl font-bold text-gt-purple bg-white/95 inline-block px-4 py-2 rounded-sm shadow-lg">
