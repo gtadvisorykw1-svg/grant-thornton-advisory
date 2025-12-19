@@ -30,7 +30,7 @@ const slides: CarouselItem[] = [
     bgDesktop: '/carousl-images/Slide1.png',
     bgMobile: '/carousl-images/Slide1.png',
     headline: 'Get the most from a thriving market.',
-    subHeadline: 'Go Beyond with Grant Thornton in Saudi Arabia',
+    subHeadline: 'Go Beyond with Grant Thornton in Kuwait',
   },
   {
     id: 'leaders',

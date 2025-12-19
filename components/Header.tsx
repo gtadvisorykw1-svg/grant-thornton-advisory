@@ -81,7 +81,7 @@ const navigationData = {
         links: [
           { label: 'Global Network', href: '/about/global-network' },
           { label: 'GCC Region', href: '/about/gcc-region' },
-          { label: 'Doing Business in Saudi Arabia', href: '/about/doing-business-in-saudi-arabia' },
+          { label: 'Doing Business in Kuwait', href: '/about/doing-business-in-kuwait' },
         ],
       },
       {
