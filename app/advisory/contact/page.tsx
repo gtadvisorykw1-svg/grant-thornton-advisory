@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { 
   Phone, MessageCircle, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle,
-  ArrowRight, ChevronRight, Building2, FileText, Search, BarChart3
+  ArrowRight, ChevronRight, Building2
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Header } from '@/components/Header';
@@ -343,30 +343,6 @@ export default function AdvisoryContactPage() {
 
 
 
-      <section className="bg-[#f2f1ef] py-16">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
-              <FileText className="w-10 h-10 text-[#4f2d7f] mb-4" />
-              <h3 className="text-xl font-bold text-[#4f2d7f] mb-2">Submit RFP</h3>
-              <p className="text-gray-600 mb-4">Need a formal proposal? Submit your requirements and our team will respond with a tailored solution.</p>
-              <Link href="/advisory/contact" className="inline-flex items-center gap-2 text-[#ce2c2c] font-medium hover:gap-3 transition-all">Submit Request <ArrowRight className="w-4 h-4" /></Link>
-            </div>
-            <div className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
-              <Search className="w-10 h-10 text-[#4f2d7f] mb-4" />
-              <h3 className="text-xl font-bold text-[#4f2d7f] mb-2">Advisory Services</h3>
-              <p className="text-gray-600 mb-4">Discover our full range of advisory capabilities designed to help your business thrive.</p>
-              <Link href="/advisory" className="inline-flex items-center gap-2 text-[#ce2c2c] font-medium hover:gap-3 transition-all">View Services <ArrowRight className="w-4 h-4" /></Link>
-            </div>
-            <div className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
-              <BarChart3 className="w-10 h-10 text-[#4f2d7f] mb-4" />
-              <h3 className="text-xl font-bold text-[#4f2d7f] mb-2">Insights & Articles</h3>
-              <p className="text-gray-600 mb-4">Stay informed with the latest thinking from our Advisory experts.</p>
-              <a href="https://www.grantthornton.global/en/insights/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#ce2c2c] font-medium hover:gap-3 transition-all">Read More <ArrowRight className="w-4 h-4" /></a>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 max-w-7xl">
