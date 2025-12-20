@@ -74,22 +74,20 @@ const navigationData = {
           { label: 'Who We Are', href: '/about' },
           { label: 'Our Mission & Values', href: '/about/mission-values' },
           { label: 'Our Leadership', href: '/about/leadership' },
-          { label: 'Our History', href: '/about/history' },
         ],
       },
       {
         title: 'Our Network',
         links: [
-          { label: 'Global Network', href: '/about/global-network' },
-          { label: 'GCC Region', href: '/about/gcc-region' },
-          { label: 'Doing Business in Kuwait', href: '/about/doing-business-in-kuwait' },
+          { label: 'Global Network', href: 'https://www.grantthornton.global/en/about/' },
+          { label: 'GCC Region', href: 'https://www.grantthornton.global/en/regions/gcc/' },
         ],
       },
       {
-        title: 'Recognition',
+        title: 'Connect',
         links: [
-          { label: 'Awards & Accolades', href: '/about/awards' },
-          { label: 'Our Clients', href: '/about/clients' },
+          { label: 'Contact Us', href: '/advisory/contact' },
+          { label: 'Careers', href: '/careers' },
         ],
       },
     ],

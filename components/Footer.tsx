@@ -4,19 +4,19 @@ import Link from 'next/link';
 const footerLinks = {
   connect: [
     { label: 'About us', href: '/about' },
-    { label: 'Contact Us', href: '/contact' },
-    { label: 'Complaints', href: '/contact' },
+    { label: 'Contact Us', href: '/advisory/contact' },
+    { label: 'Careers', href: '/careers' },
   ],
   about: [
     { label: 'About us', href: '/about' },
     { label: 'Services', href: '/services' },
-    { label: 'Careers', href: '/careers' },
-    { label: 'Insights', href: '/insights' },
+    { label: 'Industries', href: '/industries' },
+    { label: 'Insights', href: 'https://www.grantthornton.global/en/insights/', external: true },
   ],
   legal: [
-    { label: 'Privacy policy', href: '/privacy' },
-    { label: 'Disclaimer', href: '/disclaimer' },
-    { label: 'Cookie Preferences', href: '/cookies' },
+    { label: 'Privacy policy', href: 'https://www.grantthornton.global/en/privacy-policy/', external: true },
+    { label: 'Disclaimer', href: 'https://www.grantthornton.global/en/disclaimer/', external: true },
+    { label: 'Cookie Policy', href: 'https://www.grantthornton.global/en/cookie-policy/', external: true },
   ],
 };
 
@@ -57,12 +57,23 @@ export function Footer() {
             <ul className="space-y-2 sm:space-y-3" role="list">
               {footerLinks.about.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-white text-sm sm:text-base hover:underline transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4F2D7F] rounded px-1 -mx-1"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white text-sm sm:text-base hover:underline transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4F2D7F] rounded px-1 -mx-1"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-white text-sm sm:text-base hover:underline transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4F2D7F] rounded px-1 -mx-1"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -76,12 +87,23 @@ export function Footer() {
             <ul className="space-y-2 sm:space-y-3" role="list">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-white text-sm sm:text-base hover:underline transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4F2D7F] rounded px-1 -mx-1"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white text-sm sm:text-base hover:underline transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4F2D7F] rounded px-1 -mx-1"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-white text-sm sm:text-base hover:underline transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4F2D7F] rounded px-1 -mx-1"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

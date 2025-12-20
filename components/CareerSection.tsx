@@ -35,7 +35,7 @@ export function CareerSection() {
 
           {/* CTA Button with Arrow */}
           <a
-            href="/Careers/"
+            href="/careers"
             className="inline-flex items-center gap-2 px-6 sm:px-10 py-3 sm:py-4 border border-white rounded text-white text-sm sm:text-base bg-transparent hover:bg-white/10 transition-all duration-500 group"
           >
             <span className="text-base transition-transform duration-500 group-hover:-translate-x-1">

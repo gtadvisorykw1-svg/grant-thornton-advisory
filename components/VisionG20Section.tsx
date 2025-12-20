@@ -25,7 +25,7 @@ export function VisionG20Section() {
 
           {/* Button */}
           <a
-            href="/contact/"
+            href="/advisory/contact"
             className="inline-flex items-center justify-center px-10 py-4 rounded bg-transparent text-white text-base transition-all duration-500 hover:bg-white/10 group"
             style={{ 
               border: '2px solid rgb(255, 255, 255)',

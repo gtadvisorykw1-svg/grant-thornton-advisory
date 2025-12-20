@@ -319,7 +319,7 @@ export default function AdvisoryContactPage() {
                   <div className="space-y-4 pt-4 border-t border-gray-200">
                     <label className="flex items-start gap-3 cursor-pointer">
                       <input type="checkbox" name="privacyPolicy" checked={formData.privacyPolicy} onChange={handleInputChange} className="mt-1 w-4 h-4 text-[#4f2d7f] focus:ring-[#4f2d7f] rounded" />
-                      <span className="text-sm text-gray-700">I have read and understand the <Link href="/privacy" className="text-[#4f2d7f] hover:text-[#ce2c2c] underline">privacy policy</Link> <span className="text-[#ce2c2c]">*</span></span>
+                      <span className="text-sm text-gray-700">I have read and understand the <a href="https://www.grantthornton.global/en/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-[#4f2d7f] hover:text-[#ce2c2c] underline">privacy policy</a> <span className="text-[#ce2c2c]">*</span></span>
                     </label>
                     {errors.privacyPolicy && <p className="text-sm text-[#ce2c2c] flex items-center gap-2 ml-7"><AlertCircle className="w-4 h-4" />{errors.privacyPolicy}</p>}
                     <label className="flex items-start gap-3 cursor-pointer">

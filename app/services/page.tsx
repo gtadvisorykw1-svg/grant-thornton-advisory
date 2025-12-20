@@ -229,7 +229,7 @@ export default function ServicesPage() {
                 Connect with our advisory team to start the conversation about how we can help you achieve your goals.
               </p>
               <Link
-                href="/contact"
+                href="/advisory/contact"
                 className="inline-flex items-center px-8 py-3 bg-[#CF2020] text-white font-medium rounded hover:bg-[#B01B1B] transition-colors"
               >
                 Contact Us

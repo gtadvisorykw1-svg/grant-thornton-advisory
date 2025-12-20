@@ -68,7 +68,7 @@ export function FloatingCTA() {
                 {/* Options */}
                 <div className="p-4 space-y-3">
                   <Link
-                    href="/contact"
+                    href="/advisory/contact"
                     className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-[#4F2D7F]/5 transition-colors group"
                   >
                     <div className="w-10 h-10 rounded-full bg-[#4F2D7F]/10 flex items-center justify-center group-hover:bg-[#4F2D7F] transition-colors">

@@ -143,7 +143,7 @@ export function IndustryPageTemplate({
                 Explore our latest thinking and research on this industry.
               </p>
               <Link
-                href="/insights"
+                href="https://www.grantthornton.global/en/insights/"
                 className="inline-flex items-center text-[#CF2020] font-medium hover:text-[#B01B1B] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4F2D7F] rounded"
               >
                 View all insights
@@ -165,7 +165,7 @@ export function IndustryPageTemplate({
                   Get in touch with our team to discuss how we can support your business in this industry.
                 </p>
                 <Link
-                  href="/contact"
+                  href="/advisory/contact"
                   className="inline-flex items-center px-8 py-3 bg-[#CF2020] text-white font-medium rounded btn-hover-lift hover:bg-[#B01B1B] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4F2D7F]"
                 >
                   Contact Us

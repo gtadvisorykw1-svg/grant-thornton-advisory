@@ -195,7 +195,7 @@ export default function MissionValuesPage() {
                   Let us show you how our commitment to excellence can drive your business forward.
                 </p>
                 <Link
-                  href="/contact"
+                  href="/advisory/contact"
                   className="inline-flex items-center px-8 py-3 bg-[#CF2020] text-white font-medium rounded btn-hover-lift hover:bg-[#B01B1B] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4F2D7F]"
                 >
                   Contact Us
