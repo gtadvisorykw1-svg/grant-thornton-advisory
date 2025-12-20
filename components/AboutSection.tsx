@@ -1,23 +1,23 @@
 'use client';
 
 import { ScrollReveal, StaggerContainer, StaggerItem } from './ui/ScrollReveal';
-import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 const services = [
   {
     title: 'Advisory',
-    text: 'We offer a comprehensive range of advisory services to help you create, transform and protect value.',
+    text: 'Our advisory services encompass due diligence, valuation, liquidation, forensics, and bookkeeping, ensuring informed financial decisions for your business.',
+    href: '/advisory',
+  },
+  {
+    title: 'Business Risk Services',
+    text: 'We offer services such as internal audit, risk management, internal audit quality review, internal controls review, portfolio/AML reviews, and SOP development.',
     href: '/services',
   },
   {
-    title: 'Assurance',
-    text: 'We have the scope, depth, and global reach to serve businesses who are positioned to thrive in Kuwait. Our team provide you with assurance services that deliver real value and…',
-    href: '/services',
-  },
-  {
-    title: 'Zakat and Tax',
-    text: 'Our experienced tax team not only support core compliance but are at the leading edge of transformation and operational resilience in respect of the tax landscape across Kuwait',
+    title: 'Tax',
+    text: 'Enhance your Kuwait business with our comprehensive tax services, covering tax planning, corporate income tax compliance, and FATCA/CRS reporting.',
     href: '/services',
   },
 ];
@@ -39,7 +39,7 @@ export function AboutSection() {
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extralight leading-tight mb-8 sm:mb-10 md:mb-14 text-gray-900"
               style={{ lineHeight: '1.17' }}
             >
-              We are a different kind of accounting and advisory firm, ready to meet the very diverse demands of today&apos;s business in Kuwait. Delivering fresh perspectives, practical solutions, and consistent high quality.
+              We are Grant Thornton. We go beyond business as usual, so you can too.
             </p>
           </div>
         </ScrollReveal>

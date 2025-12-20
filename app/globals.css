@@ -755,3 +755,514 @@ html {
   transform: scaleX(1);
   transform-origin: left;
 }
+
+
+/* ===== INSIGHT CARDS (Matching grantthornton.com.kw exactly) ===== */
+
+.insight-card {
+  --timing: 0.6s;
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  text-decoration: none;
+  display: flex;
+  height: 100%;
+  min-height: 480px;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  position: relative;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: 
+    box-shadow var(--timing) var(--easing),
+    background-color var(--timing) var(--easing);
+}
+
+.insight-card:hover,
+.insight-card:focus-visible {
+  box-shadow: 0 8px 24px rgba(43, 20, 77, 0.2);
+}
+
+/* Card background turns purple on hover */
+@media (hover: hover) and (min-width: 960px) {
+  .insight-card:hover,
+  .insight-card:focus-visible {
+    background: #4f2d7f;
+  }
+}
+
+/* Image Container */
+.insight-card__header {
+  position: relative;
+  height: 55%;
+  min-height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.insight-card__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform var(--timing) var(--easing);
+}
+
+@media (hover: hover) and (min-width: 960px) {
+  .insight-card:hover .insight-card__image,
+  .insight-card:focus-visible .insight-card__image {
+    transform: scale(1.08) translateY(-2%);
+  }
+}
+
+/* Close button - top right, appears on hover */
+.insight-card__close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #4f2d7f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 5;
+}
+
+@media (hover: hover) and (min-width: 960px) {
+  .insight-card:hover .insight-card__close-btn,
+  .insight-card:focus-visible .insight-card__close-btn {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Content Container */
+.insight-card__content-container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  margin-top: -32px;
+}
+
+.insight-card__content {
+  background: #ffffff;
+  border-radius: 24px 24px 0 0;
+  padding: 24px 24px 80px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: 
+    transform var(--timing) var(--easing),
+    background-color var(--timing) var(--easing);
+}
+
+/* Desktop hover - content slides up */
+@media (hover: hover) and (min-width: 960px) {
+  .insight-card:hover .insight-card__content,
+  .insight-card:focus-visible .insight-card__content {
+    transform: translateY(-60px);
+    background-color: #4f2d7f;
+  }
+}
+
+/* Category */
+.insight-card__category {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #666666;
+  margin-bottom: 8px;
+  transition: color var(--timing) var(--easing);
+}
+
+/* Title */
+.insight-card__title {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: #4f2d7f;
+  display: block;
+  margin: 0;
+  transition: color var(--timing) var(--easing);
+}
+
+/* Description - hidden by default, revealed on hover */
+.insight-card__description {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: 
+    max-height var(--timing) var(--easing),
+    opacity var(--timing) var(--easing),
+    margin-top var(--timing) var(--easing),
+    color var(--timing) var(--easing);
+}
+
+@media (hover: hover) and (min-width: 960px) {
+  .insight-card:hover .insight-card__description,
+  .insight-card:focus-visible .insight-card__description {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 12px;
+  }
+}
+
+/* Date */
+.insight-card__date {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #888888;
+  margin-top: 8px;
+  transition: color var(--timing) var(--easing);
+}
+
+/* Text color transitions on hover */
+@media (hover: hover) and (min-width: 960px) {
+  .insight-card:hover .insight-card__category,
+  .insight-card:focus-visible .insight-card__category,
+  .insight-card:hover .insight-card__title,
+  .insight-card:focus-visible .insight-card__title,
+  .insight-card:hover .insight-card__description,
+  .insight-card:focus-visible .insight-card__description,
+  .insight-card:hover .insight-card__date,
+  .insight-card:focus-visible .insight-card__date {
+    color: #ffffff;
+  }
+}
+
+/* External Link Button */
+.insight-card__link-container {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 3;
+  transition: opacity var(--timing) var(--easing);
+}
+
+@media (hover: hover) and (min-width: 960px) {
+  .insight-card:hover .insight-card__link-container,
+  .insight-card:focus-visible .insight-card__link-container {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.insight-card__link-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4f2d7f;
+  color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.insight-card__link-button:hover {
+  background: #6b3fa0;
+  transform: scale(1.05);
+}
+
+/* Focus states */
+.insight-card:focus-visible {
+  outline: 2px solid #4f2d7f;
+  outline-offset: 2px;
+}
+
+.insight-card:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Touch devices - disable hover effects */
+@media (hover: none) {
+  .insight-card {
+    outline: none;
+    background: #ffffff !important;
+  }
+  
+  .insight-card__close-btn {
+    display: none;
+  }
+  
+  .insight-card__link-container {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  
+  .insight-card__content {
+    transform: none !important;
+    background-color: #ffffff !important;
+  }
+  
+  .insight-card__category { color: #666666 !important; }
+  .insight-card__title { color: #4f2d7f !important; }
+  .insight-card__date { color: #888888 !important; }
+}
+
+/* Mobile adjustments */
+@media (max-width: 959px) {
+  .insight-card {
+    min-height: 420px;
+  }
+  
+  .insight-card__header {
+    min-height: 180px;
+  }
+  
+  .insight-card__content {
+    padding: 20px 20px 70px;
+  }
+  
+  .insight-card__title {
+    font-size: 18px;
+  }
+  
+  .insight-card__link-container {
+    left: 20px;
+    bottom: 20px;
+  }
+  
+  .insight-card__link-button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+
+/* ===== DOING BUSINESS & INSIGHTS CARDS ===== */
+
+.doing-business-card,
+.insights-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.doing-business-card:hover {
+  background-color: #3d2266;
+}
+
+.insights-card:hover {
+  background-color: #e8e4df;
+}
+
+/* Button hover effects */
+.doing-business-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.doing-business-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.doing-business-btn:hover::before {
+  left: 100%;
+}
+
+.insights-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.insights-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.insights-btn:hover::before {
+  left: 100%;
+}
+
+/* Focus states for accessibility */
+.doing-business-btn:focus-visible,
+.insights-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.insights-btn:focus-visible {
+  outline-color: #4F2D7F;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+  .doing-business-card,
+  .insights-card {
+    text-align: center;
+  }
+  
+  .doing-business-card .max-w-lg,
+  .insights-card .max-w-lg {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+/* ===== ABOUT SERVICE CARDS (Matching grantthornton.com.kw) ===== */
+
+.about-card {
+  --timing: 0.5s;
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  display: block;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  height: 100%;
+  min-height: 220px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition: 
+    background-color var(--timing) var(--easing),
+    box-shadow var(--timing) var(--easing),
+    transform var(--timing) var(--easing);
+}
+
+/* Hover state - background turns purple */
+@media (hover: hover) and (min-width: 768px) {
+  .about-card:hover,
+  .about-card:focus-visible {
+    background: #4f2d7f;
+    box-shadow: 0 12px 40px rgba(79, 45, 127, 0.25);
+    transform: translateY(-6px);
+  }
+}
+
+/* Title styling */
+.about-card__title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #4f2d7f;
+  margin-bottom: 16px;
+  transition: color var(--timing) var(--easing);
+}
+
+/* Title turns white on hover */
+@media (hover: hover) and (min-width: 768px) {
+  .about-card:hover .about-card__title,
+  .about-card:focus-visible .about-card__title {
+    color: #ffffff;
+  }
+}
+
+/* Description styling */
+.about-card__description {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+  transition: color var(--timing) var(--easing);
+}
+
+/* Description turns white on hover */
+@media (hover: hover) and (min-width: 768px) {
+  .about-card:hover .about-card__description,
+  .about-card:focus-visible .about-card__description {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Arrow indicator that appears on hover */
+.about-card__arrow {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: 
+    opacity var(--timing) var(--easing),
+    transform var(--timing) var(--easing);
+}
+
+@media (hover: hover) and (min-width: 768px) {
+  .about-card:hover .about-card__arrow,
+  .about-card:focus-visible .about-card__arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Focus state */
+.about-card:focus-visible {
+  outline: 2px solid #4f2d7f;
+  outline-offset: 2px;
+}
+
+.about-card:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Touch devices - disable hover effects */
+@media (hover: none) {
+  .about-card {
+    background: #ffffff !important;
+    transform: none !important;
+  }
+  
+  .about-card__title {
+    color: #4f2d7f !important;
+  }
+  
+  .about-card__description {
+    color: #555555 !important;
+  }
+  
+  .about-card__arrow {
+    display: none;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .about-card {
+    padding: 24px 20px;
+    min-height: auto;
+  }
+  
+  .about-card__title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  
+  .about-card__description {
+    font-size: 14px;
+  }
+}

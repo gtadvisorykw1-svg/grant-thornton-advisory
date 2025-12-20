@@ -21,6 +21,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.grantthornton.com.kw',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.grantthornton.global',
+      },
     ],
   },
 };

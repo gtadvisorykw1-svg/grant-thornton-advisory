@@ -146,15 +146,17 @@ export default function ServicesPage() {
                 <Link
                   key={service.title}
                   href={service.href}
-                  className="group block bg-white border border-gray-200 rounded-lg p-6 hover:border-[#4F2D7F] hover:shadow-lg transition-all duration-300"
+                  className="block p-8 rounded-3xl h-full card-hover bg-white shadow-[0_4px_20px_rgb(0,0,0,0.06)] group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4F2D7F] focus-visible:ring-offset-2 transition-all duration-500"
                 >
-                  <h3 className="heading-md text-[#4F2D7F] mb-3 group-hover:text-[#CF2020] transition-colors">
-                    {service.title}
+                  <h3 className="mb-4">
+                    <span className="text-2xl font-normal transition-colors duration-500 group-hover:text-[#CF2020] text-gt-purple">
+                      {service.title}
+                    </span>
                   </h3>
-                  <p className="body-md text-gray-600 mb-4">
+                  <p className="text-base leading-relaxed text-gray-700 mb-4">
                     {service.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {service.features.map((feature) => (
                       <span
                         key={feature}
@@ -164,9 +166,9 @@ export default function ServicesPage() {
                       </span>
                     ))}
                   </div>
-                  <span className="inline-flex items-center text-sm font-medium text-[#4F2D7F] group-hover:text-[#CF2020] transition-colors">
+                  <span className="inline-flex items-center text-sm font-medium text-[#4F2D7F] group-hover:text-[#CF2020] transition-colors duration-500">
                     Learn more
-                    <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-500" />
                   </span>
                 </Link>
               ))}
@@ -190,15 +192,17 @@ export default function ServicesPage() {
                 <Link
                   key={service.title}
                   href={service.href}
-                  className="group block bg-white border border-gray-200 rounded-lg p-6 hover:border-[#4F2D7F] hover:shadow-lg transition-all duration-300"
+                  className="block p-8 rounded-3xl h-full card-hover bg-white shadow-[0_4px_20px_rgb(0,0,0,0.06)] group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4F2D7F] focus-visible:ring-offset-2 transition-all duration-500"
                 >
-                  <h3 className="heading-md text-[#4F2D7F] mb-3 group-hover:text-[#CF2020] transition-colors">
-                    {service.title}
+                  <h3 className="mb-4">
+                    <span className="text-2xl font-normal transition-colors duration-500 group-hover:text-[#CF2020] text-gt-purple">
+                      {service.title}
+                    </span>
                   </h3>
-                  <p className="body-md text-gray-600 mb-4">
+                  <p className="text-base leading-relaxed text-gray-700 mb-4">
                     {service.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {service.features.map((feature) => (
                       <span
                         key={feature}
@@ -208,9 +212,9 @@ export default function ServicesPage() {
                       </span>
                     ))}
                   </div>
-                  <span className="inline-flex items-center text-sm font-medium text-[#4F2D7F] group-hover:text-[#CF2020] transition-colors">
+                  <span className="inline-flex items-center text-sm font-medium text-[#4F2D7F] group-hover:text-[#CF2020] transition-colors duration-500">
                     Learn more
-                    <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-500" />
                   </span>
                 </Link>
               ))}
