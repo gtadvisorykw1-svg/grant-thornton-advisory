@@ -154,48 +154,48 @@ export default function AdvisoryContactPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <section className="bg-gradient-to-br from-[#4f2d7f] to-[#2b144d] text-white py-20">
+      <section className="bg-gradient-to-br from-[#4f2d7f] to-[#2b144d] text-white py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 max-w-7xl">
-          <nav className="mb-8">
-            <ol className="flex items-center gap-2 text-sm text-white/70">
+          <nav className="mb-6 sm:mb-8">
+            <ol className="flex flex-wrap items-center gap-1 sm:gap-2 text-xs sm:text-sm text-white/70">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><ChevronRight className="w-4 h-4" /></li>
+              <li><ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" /></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
-              <li><ChevronRight className="w-4 h-4" /></li>
+              <li><ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" /></li>
               <li><Link href="/advisory" className="hover:text-white transition-colors">Advisory</Link></li>
-              <li><ChevronRight className="w-4 h-4" /></li>
+              <li><ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" /></li>
               <li className="text-white">Contact Us</li>
             </ol>
           </nav>
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Our Advisory Team</h1>
-            <p className="text-xl text-white/90 leading-relaxed">Get in touch with our Advisory specialists to discuss how we can help your business navigate challenges, manage risk, and unlock growth opportunities.</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Contact Our Advisory Team</h1>
+            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">Get in touch with our Advisory specialists to discuss how we can help your business navigate challenges, manage risk, and unlock growth opportunities.</p>
           </div>
         </div>
       </section>
 
-      <section className="bg-white border-b border-gray-200 py-4 lg:hidden">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-4 gap-2">
-            <a href="tel:+96522443900,263" className="flex flex-col items-center justify-center gap-1 p-3 bg-[#4f2d7f]/10 hover:bg-[#4f2d7f]/20 rounded-lg transition-colors">
-              <Phone className="w-6 h-6 text-[#4f2d7f]" /><span className="text-xs text-[#4f2d7f] font-medium">Call</span>
+      <section className="bg-white border-b border-gray-200 py-3 sm:py-4 lg:hidden">
+        <div className="container mx-auto px-3 sm:px-4">
+          <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
+            <a href="tel:+96522443900,263" className="flex flex-col items-center justify-center gap-0.5 sm:gap-1 p-2 sm:p-3 bg-[#4f2d7f]/10 hover:bg-[#4f2d7f]/20 rounded-lg transition-colors">
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-[#4f2d7f]" /><span className="text-[10px] sm:text-xs text-[#4f2d7f] font-medium">Call</span>
             </a>
-            <a href="https://wa.me/96541021616" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center gap-1 p-3 bg-[#25D366]/10 hover:bg-[#25D366]/20 rounded-lg transition-colors">
-              <MessageCircle className="w-6 h-6 text-[#25D366]" /><span className="text-xs text-[#25D366] font-medium">WhatsApp</span>
+            <a href="https://wa.me/96541021616" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center gap-0.5 sm:gap-1 p-2 sm:p-3 bg-[#25D366]/10 hover:bg-[#25D366]/20 rounded-lg transition-colors">
+              <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[#25D366]" /><span className="text-[10px] sm:text-xs text-[#25D366] font-medium">WhatsApp</span>
             </a>
-            <a href="mailto:info@advisory.kw.gt.com" className="flex flex-col items-center justify-center gap-1 p-3 bg-[#ce2c2c]/10 hover:bg-[#ce2c2c]/20 rounded-lg transition-colors">
-              <Mail className="w-5 h-5 text-[#ce2c2c]" /><span className="text-xs text-[#ce2c2c] font-medium">Email</span>
+            <a href="mailto:info@advisory.kw.gt.com" className="flex flex-col items-center justify-center gap-0.5 sm:gap-1 p-2 sm:p-3 bg-[#ce2c2c]/10 hover:bg-[#ce2c2c]/20 rounded-lg transition-colors">
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[#ce2c2c]" /><span className="text-[10px] sm:text-xs text-[#ce2c2c] font-medium">Email</span>
             </a>
-            <a href="https://www.google.com/maps?q=Souk+Al+Kabeer+Building,+Kuwait" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center gap-1 p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
-              <MapPin className="w-6 h-6 text-gray-700" /><span className="text-xs text-gray-700 font-medium">Map</span>
+            <a href="https://www.google.com/maps?q=Souk+Al+Kabeer+Building,+Kuwait" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center gap-0.5 sm:gap-1 p-2 sm:p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+              <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" /><span className="text-[10px] sm:text-xs text-gray-700 font-medium">Map</span>
             </a>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f2f1ef] py-16">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid lg:grid-cols-12 gap-8">
+      <section className="bg-[#f2f1ef] py-10 sm:py-12 md:py-16">
+        <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
+          <div className="grid lg:grid-cols-12 gap-6 sm:gap-8">
             <div className="lg:col-span-4 lg:order-2">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden sticky top-24">
                 <div className="h-2 bg-[#4f2d7f]" />
@@ -230,10 +230,10 @@ export default function AdvisoryContactPage() {
             </div>
 
             <div className="lg:col-span-8 lg:order-1">
-              <div className="bg-white rounded-lg shadow-lg p-6 md:p-10">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#4f2d7f] mb-2">How can we help you?</h2>
-                <p className="text-gray-600 mb-8">Fill out the form below and our team will get back to you shortly.</p>
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="bg-white rounded-lg shadow-lg p-5 sm:p-6 md:p-10">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#4f2d7f] mb-2">How can we help you?</h2>
+                <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8">Fill out the form below and our team will get back to you shortly.</p>
+                <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                   <div>
                     <label htmlFor="advisoryService" className="block text-sm font-medium text-gray-700 mb-2">Advisory Service <span className="text-[#ce2c2c]">*</span></label>
                     <select id="advisoryService" name="advisoryService" value={formData.advisoryService} onChange={handleInputChange} className={`w-full px-4 py-3 border rounded-lg text-base focus:ring-2 focus:ring-[#4f2d7f]/20 outline-none transition-all ${errors.advisoryService ? 'border-[#ce2c2c]' : 'border-gray-300 focus:border-[#4f2d7f]'}`}>
@@ -242,7 +242,7 @@ export default function AdvisoryContactPage() {
                     {errors.advisoryService && <p className="mt-2 text-sm text-[#ce2c2c] flex items-center gap-2"><AlertCircle className="w-4 h-4" />{errors.advisoryService}</p>}
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                     <div>
                       <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-2">Title <span className="text-[#ce2c2c]">*</span></label>
                       <select id="title" name="title" value={formData.title} onChange={handleInputChange} className={`w-full px-4 py-3 border rounded-lg text-base focus:ring-2 focus:ring-[#4f2d7f]/20 outline-none transition-all ${errors.title ? 'border-[#ce2c2c]' : 'border-gray-300 focus:border-[#4f2d7f]'}`}>
@@ -279,7 +279,7 @@ export default function AdvisoryContactPage() {
                     </select>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address <span className="text-[#ce2c2c]">*</span></label>
                       <div className="relative">
