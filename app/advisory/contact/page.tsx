@@ -178,7 +178,7 @@ export default function AdvisoryContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" suppressHydrationWarning>
       <Header />
       <section className="bg-gradient-to-br from-[#4f2d7f] to-[#2b144d] text-white py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 max-w-7xl">
