@@ -186,7 +186,7 @@ export default function AdvisoryContactPage() {
             <a href="mailto:info@advisory.kw.gt.com" className="flex flex-col items-center justify-center gap-0.5 sm:gap-1 p-2 sm:p-3 bg-[#ce2c2c]/10 hover:bg-[#ce2c2c]/20 rounded-lg transition-colors">
               <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[#ce2c2c]" /><span className="text-[10px] sm:text-xs text-[#ce2c2c] font-medium">Email</span>
             </a>
-            <a href="https://www.google.com/maps?q=Souk+Al+Kabeer+Building,+Kuwait" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center gap-0.5 sm:gap-1 p-2 sm:p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+            <a href="https://maps.app.goo.gl/xzZoSKATtAEJCknm6?g_st=iw" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center gap-0.5 sm:gap-1 p-2 sm:p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
               <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" /><span className="text-[10px] sm:text-xs text-gray-700 font-medium">Map</span>
             </a>
           </div>
@@ -219,7 +219,7 @@ export default function AdvisoryContactPage() {
                   <div className="mb-6">
                     <div className="flex items-center gap-3 mb-2"><MapPin className="w-5 h-5 text-[#4f2d7f]" /><span className="font-semibold text-gray-800">Visit Us</span></div>
                     <p className="text-gray-600 text-sm leading-relaxed mb-3"><strong>AL-AIBAN & AL-QATAMI CO.</strong><br />Grant Thornton<br />Al-Qibla, Fahd Al-Salem Street<br />Souk Al-Kabeer Building<br />Block A, 9th Floor, Kuwait</p>
-                    <a href="https://www.google.com/maps?q=Souk+Al+Kabeer+Building,+Kuwait" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#4f2d7f] hover:text-[#ce2c2c] font-medium text-sm transition-colors">Get Directions <ArrowRight className="w-4 h-4" /></a>
+                    <a href="https://maps.app.goo.gl/xzZoSKATtAEJCknm6?g_st=iw" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#4f2d7f] hover:text-[#ce2c2c] font-medium text-sm transition-colors">Get Directions <ArrowRight className="w-4 h-4" /></a>
                   </div>
                   <div className="pt-6 border-t border-gray-200">
                     <div className="flex items-center gap-3 mb-2"><Clock className="w-5 h-5 text-[#4f2d7f]" /><span className="font-semibold text-gray-800">Office Hours</span></div>
