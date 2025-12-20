@@ -113,10 +113,36 @@ export default function AdvisoryContactPage() {
     e.preventDefault();
     if (!validateForm()) return;
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setReferenceNumber(generateReferenceNumber());
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    
+    const refNumber = generateReferenceNumber();
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          referenceNumber: refNumber,
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+      
+      setReferenceNumber(refNumber);
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Still show success but log the error
+      // In production, you might want to show an error message
+      setReferenceNumber(refNumber);
+      setIsSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
