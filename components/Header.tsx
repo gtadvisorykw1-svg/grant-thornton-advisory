@@ -339,17 +339,17 @@ export function Header() {
           isScrolled || activeMenu ? 'shadow-md' : ''
         }`}
       >
-        <div className="w-full px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="flex h-16 sm:h-18 md:h-20 items-center justify-between">
+        <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex h-14 sm:h-16 md:h-20 items-center justify-between gap-1 sm:gap-2">
             {/* Logo */}
-            <Link href="/" className="flex items-center shrink-0" onClick={() => setActiveMenu(null)}>
-              <div className="relative h-10 sm:h-12 md:h-16 w-auto">
+            <Link href="/" className="flex items-center shrink-0 min-w-0" onClick={() => setActiveMenu(null)}>
+              <div className="relative h-8 sm:h-10 md:h-16 w-auto">
                 <Image
                   src="/logo.png"
                   alt="Grant Thornton"
                   width={320}
                   height={128}
-                  className="h-10 sm:h-12 md:h-16 w-auto"
+                  className="h-8 sm:h-10 md:h-16 w-auto object-contain"
                   quality={100}
                   priority
                   unoptimized
@@ -409,7 +409,7 @@ export function Header() {
             </nav>
 
             {/* Right Actions */}
-            <div className="flex items-center space-x-1 sm:space-x-2">
+            <div className="flex items-center shrink-0">
               <button
                 onClick={openSearch}
                 className="p-1.5 sm:p-2 text-[#4F2D7F] hover:text-[#CF2020] transition-all duration-500"
@@ -432,9 +432,9 @@ export function Header() {
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? (
-                  <X className="h-5 w-5 sm:h-6 sm:w-6" />
+                  <X className="h-5 w-5" />
                 ) : (
-                  <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                 )}
@@ -481,8 +481,8 @@ export function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-xl max-h-[calc(100vh-4rem)] sm:max-h-[calc(100vh-5rem)] overflow-y-auto transition-all duration-500 ease-in-out">
-            <div className="px-4 sm:px-6 py-4 sm:py-6">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-xl max-h-[calc(100vh-3.5rem)] sm:max-h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-500 ease-in-out">
+            <div className="px-3 sm:px-6 py-3 sm:py-6">
               {Object.entries(navigationData).map(([key, data]) => (
                 <div key={key} className="border-b border-gray-200 last:border-b-0">
                   <button
@@ -660,7 +660,7 @@ export function Header() {
       )}
 
       {/* Spacer for fixed header */}
-      <div className="h-16 sm:h-18 md:h-20" />
+      <div className="h-14 sm:h-16 md:h-20" />
     </>
   );
 }
