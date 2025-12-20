@@ -341,17 +341,17 @@ export function Header() {
           isScrolled || activeMenu ? 'shadow-md' : ''
         }`}
       >
-        <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="flex h-20 items-center justify-between">
+        <div className="w-full px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex h-16 sm:h-18 md:h-20 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center shrink-0" onClick={() => setActiveMenu(null)}>
-              <div className="relative h-16 w-auto">
+              <div className="relative h-10 sm:h-12 md:h-16 w-auto">
                 <Image
                   src="/logo.png"
                   alt="Grant Thornton"
                   width={320}
                   height={128}
-                  className="h-16 w-auto"
+                  className="h-10 sm:h-12 md:h-16 w-auto"
                   quality={100}
                   priority
                   unoptimized
@@ -411,32 +411,32 @@ export function Header() {
             </nav>
 
             {/* Right Actions */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-1 sm:space-x-2">
               <button
                 onClick={openSearch}
-                className="p-2 text-[#4F2D7F] hover:text-[#CF2020] transition-all duration-500"
+                className="p-1.5 sm:p-2 text-[#4F2D7F] hover:text-[#CF2020] transition-all duration-500"
                 aria-label="Search"
               >
-                <Search className="h-5 w-5" />
+                <Search className="h-4 w-4 sm:h-5 sm:w-5" />
               </button>
               <button
                 onClick={openRegion}
-                className="p-2 text-[#4F2D7F] hover:text-[#CF2020] transition-all duration-500"
+                className="p-1.5 sm:p-2 text-[#4F2D7F] hover:text-[#CF2020] transition-all duration-500"
                 aria-label="Select region"
               >
-                <Globe className="h-5 w-5" />
+                <Globe className="h-4 w-4 sm:h-5 sm:w-5" />
               </button>
               
               {/* Mobile menu button */}
               <button
                 onClick={toggleMobileMenu}
-                className="lg:hidden p-2 text-[#4F2D7F] hover:text-[#CF2020] transition-all duration-500"
+                className="lg:hidden p-1.5 sm:p-2 text-[#4F2D7F] hover:text-[#CF2020] transition-all duration-500"
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? (
-                  <X className="h-6 w-6" />
+                  <X className="h-5 w-5 sm:h-6 sm:w-6" />
                 ) : (
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                 )}
@@ -483,35 +483,35 @@ export function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-xl max-h-[calc(100vh-5rem)] overflow-y-auto transition-all duration-500 ease-in-out">
-            <div className="px-6 py-8">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-xl max-h-[calc(100vh-4rem)] sm:max-h-[calc(100vh-5rem)] overflow-y-auto transition-all duration-500 ease-in-out">
+            <div className="px-4 sm:px-6 py-4 sm:py-6">
               {Object.entries(navigationData).map(([key, data]) => (
                 <div key={key} className="border-b border-gray-200 last:border-b-0">
                   <button
                     onClick={() => setExpandedMobileSection(expandedMobileSection === key ? null : key)}
-                    className="flex items-center justify-between w-full py-5 text-[16px] font-medium text-[#4F2D7F] transition-all duration-500"
+                    className="flex items-center justify-between w-full py-3 sm:py-4 text-[15px] sm:text-[16px] font-medium text-[#4F2D7F] transition-all duration-500"
                   >
                     <span>{data.label}</span>
                     <ChevronDown
-                      className={`h-5 w-5 transition-transform duration-300 ${
+                      className={`h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-300 ${
                         expandedMobileSection === key ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
                   
                   {expandedMobileSection === key && (
-                    <div className="pb-6 pl-6">
+                    <div className="pb-4 sm:pb-6 pl-4 sm:pl-6">
                       {data.columns.map((column, idx) => (
-                        <div key={idx} className="mb-6">
-                          <h3 className="text-xs font-bold text-[#CF2020] mb-3 uppercase tracking-wide">
+                        <div key={idx} className="mb-4 sm:mb-6">
+                          <h3 className="text-[11px] sm:text-xs font-bold text-[#CF2020] mb-2 sm:mb-3 uppercase tracking-wide">
                             {column.title}
                           </h3>
-                          <ul className="space-y-3">
+                          <ul className="space-y-2 sm:space-y-3">
                             {column.links.map((link, linkIdx) => (
                               <li key={linkIdx}>
                                 <Link
                                   href={link.href}
-                                  className="text-base text-[#333333] hover:text-[#CF2020] transition-all duration-500"
+                                  className="text-sm sm:text-base text-[#333333] hover:text-[#CF2020] transition-all duration-500"
                                   onClick={() => {
                                     setMobileMenuOpen(false);
                                     setExpandedMobileSection(null);
@@ -537,7 +537,7 @@ export function Header() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block py-5 text-[16px] font-medium text-[#4F2D7F] border-b border-gray-200 transition-all duration-300 hover:text-[#CF2020]"
+                    className="block py-3 sm:py-4 text-[15px] sm:text-[16px] font-medium text-[#4F2D7F] border-b border-gray-200 transition-all duration-300 hover:text-[#CF2020]"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
@@ -546,7 +546,7 @@ export function Header() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="block py-5 text-[16px] font-medium text-[#4F2D7F] border-b border-gray-200 transition-all duration-500 hover:text-[#CF2020]"
+                    className="block py-3 sm:py-4 text-[15px] sm:text-[16px] font-medium text-[#4F2D7F] border-b border-gray-200 transition-all duration-500 hover:text-[#CF2020]"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
@@ -560,23 +560,23 @@ export function Header() {
 
       {/* Search Overlay */}
       {searchOpen && (
-        <div className="fixed inset-x-0 top-0 z-[60] bg-white shadow-2xl transition-all duration-500 ease-in-out" style={{ height: '35vh', minHeight: '300px' }}>
-          <div className="max-w-7xl mx-auto px-8 lg:px-16 h-full flex flex-col">
-            <div className="flex justify-end pt-8">
+        <div className="fixed inset-x-0 top-0 z-[60] bg-white shadow-2xl transition-all duration-500 ease-in-out" style={{ height: '30vh', minHeight: '200px' }}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 h-full flex flex-col">
+            <div className="flex justify-end pt-4 sm:pt-6 md:pt-8">
               <button
                 onClick={() => setSearchOpen(false)}
-                className="p-3 text-[#4F2D7F] hover:text-[#CF2020] transition-all duration-500"
+                className="p-2 sm:p-3 text-[#4F2D7F] hover:text-[#CF2020] transition-all duration-500"
                 aria-label="Close search"
               >
-                <X className="h-7 w-7" />
+                <X className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7" />
               </button>
             </div>
-            <div className="flex-1 flex items-center justify-center pb-16">
+            <div className="flex-1 flex items-center justify-center pb-8 sm:pb-12 md:pb-16">
               <input
                 type="text"
                 placeholder="Search"
                 autoFocus
-                className="w-full max-w-5xl text-4xl md:text-6xl font-light text-[#4F2D7F] placeholder-gray-400 border-b-2 border-gray-300 focus:border-[#CF2020] outline-none pb-5 transition-all duration-500"
+                className="w-full max-w-5xl text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-light text-[#4F2D7F] placeholder-gray-400 border-b-2 border-gray-300 focus:border-[#CF2020] outline-none pb-3 sm:pb-4 md:pb-5 transition-all duration-500"
               />
             </div>
           </div>
@@ -586,26 +586,26 @@ export function Header() {
       {/* Region Selector Full-Screen Overlay */}
       {regionOpen && (
         <div className="fixed inset-0 z-[60] bg-white overflow-auto transition-all duration-500 ease-in-out">
-          <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
             {/* Header */}
-            <div className="flex justify-between items-center py-8 border-b border-gray-200">
-              <h2 className="text-3xl font-bold text-[#4F2D7F]">Select your location</h2>
+            <div className="flex justify-between items-center py-4 sm:py-6 md:py-8 border-b border-gray-200">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#4F2D7F]">Select your location</h2>
               <button
                 onClick={() => setRegionOpen(false)}
-                className="p-3 text-[#4F2D7F] hover:text-[#CF2020] transition-all duration-300"
+                className="p-2 sm:p-3 text-[#4F2D7F] hover:text-[#CF2020] transition-all duration-300"
                 aria-label="Close region selector"
               >
-                <X className="h-7 w-7" />
+                <X className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7" />
               </button>
             </div>
 
             {/* Region Tabs */}
-            <div className="flex flex-wrap gap-6 md:gap-10 mt-10 border-b border-gray-200">
+            <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 lg:gap-10 mt-6 sm:mt-8 md:mt-10 border-b border-gray-200">
               {regions.map((region) => (
                 <button
                   key={region.id}
                   onClick={() => setActiveRegion(region.id)}
-                  className={`pb-5 text-base font-medium transition-all duration-500 relative ${
+                  className={`pb-3 sm:pb-4 md:pb-5 text-sm sm:text-base font-medium transition-all duration-500 relative ${
                     activeRegion === region.id
                       ? 'text-[#4F2D7F]'
                       : 'text-gray-500 hover:text-[#CF2020]'
@@ -620,15 +620,15 @@ export function Header() {
             </div>
 
             {/* Countries Grid */}
-            <div className="py-16">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8">
+            <div className="py-8 sm:py-12 md:py-16">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
                 {countriesByRegion[activeRegion]?.map((country) => (
                   <a
                     key={country.name}
                     href={country.href}
                     target={country.href.startsWith('http') ? '_blank' : '_self'}
                     rel={country.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className={`text-base font-medium transition-all duration-500 ${
+                    className={`text-sm sm:text-base font-medium transition-all duration-500 ${
                       country.name === 'Kuwait' 
                         ? 'text-[#CF2020] font-bold' 
                         : 'text-[#4F2D7F] hover:text-[#CF2020]'
@@ -637,7 +637,7 @@ export function Header() {
                   >
                     {country.name}
                     {country.name === 'Kuwait' && (
-                      <span className="ml-2 text-xs bg-[#4F2D7F] text-white px-2 py-0.5 rounded">Current</span>
+                      <span className="ml-1 sm:ml-2 text-[10px] sm:text-xs bg-[#4F2D7F] text-white px-1.5 sm:px-2 py-0.5 rounded">Current</span>
                     )}
                   </a>
                 ))}
@@ -645,16 +645,16 @@ export function Header() {
             </div>
 
             {/* Global Site Link */}
-            <div className="pb-16 border-t border-gray-200 pt-10">
+            <div className="pb-8 sm:pb-12 md:pb-16 border-t border-gray-200 pt-6 sm:pt-8 md:pt-10">
               <a
                 href="https://www.grantthornton.global/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-[#4F2D7F] hover:text-[#CF2020] font-medium transition-all duration-500"
+                className="inline-flex items-center text-sm sm:text-base text-[#4F2D7F] hover:text-[#CF2020] font-medium transition-all duration-500"
               >
-                <Globe className="h-6 w-6 mr-3" />
+                <Globe className="h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3" />
                 Visit Grant Thornton Global
-                <ChevronRight className="h-5 w-5 ml-2" />
+                <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 ml-1 sm:ml-2" />
               </a>
             </div>
           </div>
@@ -662,7 +662,7 @@ export function Header() {
       )}
 
       {/* Spacer for fixed header */}
-      <div className="h-20" />
+      <div className="h-16 sm:h-18 md:h-20" />
     </>
   );
 }
