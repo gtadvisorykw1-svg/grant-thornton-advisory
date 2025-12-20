@@ -517,8 +517,8 @@ export default function CareersPage() {
                 </div>
                 <p className="body-sm text-gray-500 mt-6">
                   Questions? Contact us at{' '}
-                  <a href="mailto:careers@kw.gt.com" className="text-[#4F2D7F] hover:text-[#CF2020] underline">
-                    careers@kw.gt.com
+                  <a href="mailto:info@advisory.kw.gt.com" className="text-[#4F2D7F] hover:text-[#CF2020] underline">
+                    info@advisory.kw.gt.com
                   </a>
                 </p>
               </div>

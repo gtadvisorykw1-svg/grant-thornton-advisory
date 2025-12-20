@@ -96,7 +96,7 @@ export function FloatingCTA() {
                   </a>
 
                   <a
-                    href="mailto:info@kw.gt.com"
+                    href="mailto:info@advisory.kw.gt.com"
                     className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-[#4F2D7F]/5 transition-colors group"
                   >
                     <div className="w-10 h-10 rounded-full bg-[#4F2D7F]/10 flex items-center justify-center group-hover:bg-[#4F2D7F] transition-colors">
@@ -104,7 +104,7 @@ export function FloatingCTA() {
                     </div>
                     <div className="flex-1">
                       <p className="font-medium text-gray-900">Email Us</p>
-                      <p className="text-sm text-gray-500">info@kw.gt.com</p>
+                      <p className="text-sm text-gray-500">info@advisory.kw.gt.com</p>
                     </div>
                     <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#4F2D7F] group-hover:translate-x-1 transition-all" />
                   </a>

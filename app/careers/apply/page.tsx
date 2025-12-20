@@ -597,11 +597,11 @@ export default function ApplyPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <a 
-                  href="mailto:careers@kw.gt.com" 
+                  href="mailto:info@advisory.kw.gt.com" 
                   className="flex items-center gap-2 text-[#4F2D7F] hover:text-[#CF2020] transition-colors"
                 >
                   <Mail className="h-5 w-5" />
-                  careers@kw.gt.com
+                  info@advisory.kw.gt.com
                 </a>
                 <a 
                   href="tel:+96522452626" 
