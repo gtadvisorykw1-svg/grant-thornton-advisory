@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
@@ -28,61 +30,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create email transporter for Office 365
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.office365.com',
-      port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: false, // Office 365 uses STARTTLS on port 587
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-      tls: {
-        ciphers: 'SSLv3',
-        rejectUnauthorized: false,
-      },
-    });
-
-    // For Office 365, the from address must match the authenticated user
-    const fromAddress = process.env.SMTP_USER || 'info@advisory.kw.gt.com';
-
-    // Format the email content
-    const emailContent = `
-New Contact Form Submission
-============================
-
-Reference Number: ${referenceNumber}
-
-SERVICE DETAILS
----------------
-Advisory Service: ${advisoryService}
-
-CONTACT INFORMATION
--------------------
-Title: ${title}
-Name: ${firstName} ${surname}
-Company: ${companyName}
-Email: ${email}
-Phone: ${phone || 'Not provided'}
-Industry: ${industry || 'Not specified'}
-
-PREFERRED CONTACT METHOD
-------------------------
-${preferredContact || 'Not specified'}
-
-MESSAGE
--------
-${message}
-
-CONSENT
--------
-Marketing Communications: ${marketingConsent ? 'Yes, opted in' : 'No'}
-
----
-This email was sent from the Grant Thornton Kuwait Advisory website contact form.
-    `.trim();
-
-    // HTML version for better formatting
+    // HTML email content for the advisory team
     const htmlContent = `
 <!DOCTYPE html>
 <html>
@@ -176,17 +124,7 @@ This email was sent from the Grant Thornton Kuwait Advisory website contact form
 </html>
     `.trim();
 
-    // Send email to advisory team
-    await transporter.sendMail({
-      from: fromAddress,
-      to: 'info@advisory.kw.gt.com',
-      replyTo: email,
-      subject: `New Advisory Inquiry: ${advisoryService} - ${firstName} ${surname} [${referenceNumber}]`,
-      text: emailContent,
-      html: htmlContent,
-    });
-
-    // Also send a confirmation email to the user
+    // Confirmation email for the user
     const confirmationHtml = `
 <!DOCTYPE html>
 <html>
@@ -236,13 +174,35 @@ This email was sent from the Grant Thornton Kuwait Advisory website contact form
 </html>
     `.trim();
 
+    // Send email to advisory team
+    const { error: sendError } = await resend.emails.send({
+      from: 'Grant Thornton Advisory <onboarding@resend.dev>',
+      to: ['info@advisory.kw.gt.com'],
+      replyTo: email,
+      subject: `New Advisory Inquiry: ${advisoryService} - ${firstName} ${surname} [${referenceNumber}]`,
+      html: htmlContent,
+    });
+
+    if (sendError) {
+      console.error('Error sending email to advisory:', sendError);
+      return NextResponse.json(
+        { error: 'Failed to send email. Please try again later.' },
+        { status: 500 }
+      );
+    }
+
     // Send confirmation email to the user
-    await transporter.sendMail({
-      from: fromAddress,
-      to: email,
+    const { error: confirmError } = await resend.emails.send({
+      from: 'Grant Thornton Advisory <onboarding@resend.dev>',
+      to: [email],
       subject: `Thank you for contacting Grant Thornton Advisory [${referenceNumber}]`,
       html: confirmationHtml,
     });
+
+    if (confirmError) {
+      console.error('Error sending confirmation email:', confirmError);
+      // Don't fail the request if confirmation email fails
+    }
 
     return NextResponse.json({ 
       success: true, 
@@ -251,9 +211,9 @@ This email was sent from the Grant Thornton Kuwait Advisory website contact form
     });
 
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('Error processing contact form:', error);
     return NextResponse.json(
-      { error: 'Failed to send email. Please try again later.' },
+      { error: 'Failed to process request. Please try again later.' },
       { status: 500 }
     );
   }
