@@ -84,7 +84,7 @@ export function HeroSection() {
   const visibleItems = getVisibleItems();
 
   return (
-    <section className="relative h-[600px] lg:h-[700px] w-full overflow-hidden">
+    <section className="relative h-[450px] sm:h-[550px] md:h-[600px] lg:h-[700px] w-full overflow-hidden">
       {/* Layer 1: Background Image with slide animation */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div
@@ -115,10 +115,10 @@ export function HeroSection() {
       <div className="absolute inset-0 z-10 flex items-center pointer-events-none">
         <div className="container mx-auto px-4 lg:px-16">
           <div className="max-w-3xl">
-            <h1 className="text-white text-4xl md:text-6xl lg:text-[88px] lg:leading-[88px] font-black mb-4">
+            <h1 className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-[88px] lg:leading-[88px] font-black mb-3 sm:mb-4">
               Get the most from a<br />thriving market.
             </h1>
-            <p className="text-white/90 text-lg md:text-xl lg:text-[20px] lg:leading-[28px] font-light">
+            <p className="text-white/90 text-base sm:text-lg md:text-xl lg:text-[20px] lg:leading-[28px] font-light">
               Go Beyond with Grant Thornton in Kuwait
             </p>
           </div>
@@ -128,20 +128,20 @@ export function HeroSection() {
       {/* Navigation Buttons - Purple circles */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+        className="absolute left-2 sm:left-4 lg:left-6 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
         style={{ background: 'linear-gradient(135deg, var(--gt-purple-dark), var(--gt-purple))' }}
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+        className="absolute right-2 sm:right-4 lg:right-6 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
         style={{ background: 'linear-gradient(135deg, var(--gt-purple-dark), var(--gt-purple))' }}
         aria-label="Next slide"
       >
-        <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
       </button>
 
       {/* Layer 3: Bottom Navigation Strip */}
@@ -156,7 +156,7 @@ export function HeroSection() {
           {visibleItems.map((item, idx) => (
             <div
               key={`${item.id}-${idx}`}
-              className="relative flex-1 flex flex-col justify-end p-4 md:p-6 lg:p-8 min-h-[120px] lg:min-h-[140px] group cursor-pointer"
+              className={`relative flex-1 flex-col justify-end p-3 sm:p-4 md:p-6 lg:p-8 min-h-[90px] sm:min-h-[110px] lg:min-h-[140px] group cursor-pointer ${idx > 1 ? 'hidden md:flex' : 'flex'}`}
               style={{
                 background:
                   'linear-gradient(90deg, var(--gt-purple-dark) 0%, var(--gt-purple) 50%, var(--gt-purple-light) 100%)',

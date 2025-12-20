@@ -24,8 +24,8 @@ const services = [
 
 export function AboutSection() {
   return (
-    <section className="bg-white py-24" aria-labelledby="about-heading">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-white py-12 sm:py-16 md:py-24" aria-labelledby="about-heading">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Top Block: Label & Headline - Grant Thornton Style */}
         <ScrollReveal variant="fadeUp">
           <div className="about-us__heading">
@@ -36,7 +36,7 @@ export function AboutSection() {
               About us
             </h2>
             <p
-              className="text-4xl lg:text-5xl font-extralight leading-tight mb-14 text-gray-900"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extralight leading-tight mb-8 sm:mb-10 md:mb-14 text-gray-900"
               style={{ lineHeight: '1.17' }}
             >
               We are a different kind of accounting and advisory firm, ready to meet the very diverse demands of today&apos;s business in Kuwait. Delivering fresh perspectives, practical solutions, and consistent high quality.
