@@ -74,20 +74,7 @@ const navigationData = {
           { label: 'Who We Are', href: '/about' },
           { label: 'Our Mission & Values', href: '/about/mission-values' },
           { label: 'Our Leadership', href: '/about/leadership' },
-        ],
-      },
-      {
-        title: 'Our Network',
-        links: [
           { label: 'Global Network', href: 'https://www.grantthornton.global/en/about/' },
-          { label: 'GCC Region', href: 'https://www.grantthornton.global/en/regions/gcc/' },
-        ],
-      },
-      {
-        title: 'Connect',
-        links: [
-          { label: 'Contact Us', href: '/advisory/contact' },
-          { label: 'Careers', href: '/careers' },
         ],
       },
     ],

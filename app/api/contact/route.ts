@@ -1,7 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Microsoft 365 SMTP Configuration
+const transporter = nodemailer.createTransport({
+  host: 'smtp.office365.com',
+  port: 587,
+  secure: false, // Use STARTTLS
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+  tls: {
+    ciphers: 'SSLv3',
+    rejectUnauthorized: false,
+  },
+});
 
 export async function POST(request: NextRequest) {
   try {
@@ -175,15 +188,15 @@ export async function POST(request: NextRequest) {
     `.trim();
 
     // Send email to advisory team
-    const { error: sendError } = await resend.emails.send({
-      from: 'Grant Thornton Advisory <onboarding@resend.dev>',
-      to: ['info@advisory.kw.gt.com'],
-      replyTo: email,
-      subject: `New Advisory Inquiry: ${advisoryService} - ${firstName} ${surname} [${referenceNumber}]`,
-      html: htmlContent,
-    });
-
-    if (sendError) {
+    try {
+      await transporter.sendMail({
+        from: `"Grant Thornton Advisory" <${process.env.SMTP_USER}>`,
+        to: 'info@advisory.kw.gt.com',
+        replyTo: email,
+        subject: `New Advisory Inquiry: ${advisoryService} - ${firstName} ${surname} [${referenceNumber}]`,
+        html: htmlContent,
+      });
+    } catch (sendError) {
       console.error('Error sending email to advisory:', sendError);
       return NextResponse.json(
         { error: 'Failed to send email. Please try again later.' },
@@ -192,14 +205,14 @@ export async function POST(request: NextRequest) {
     }
 
     // Send confirmation email to the user
-    const { error: confirmError } = await resend.emails.send({
-      from: 'Grant Thornton Advisory <onboarding@resend.dev>',
-      to: [email],
-      subject: `Thank you for contacting Grant Thornton Advisory [${referenceNumber}]`,
-      html: confirmationHtml,
-    });
-
-    if (confirmError) {
+    try {
+      await transporter.sendMail({
+        from: `"Grant Thornton Advisory" <${process.env.SMTP_USER}>`,
+        to: email,
+        subject: `Thank you for contacting Grant Thornton Advisory [${referenceNumber}]`,
+        html: confirmationHtml,
+      });
+    } catch (confirmError) {
       console.error('Error sending confirmation email:', confirmError);
       // Don't fail the request if confirmation email fails
     }
