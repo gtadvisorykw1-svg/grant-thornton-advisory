@@ -28,17 +28,23 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create email transporter
-    // For production, use environment variables for SMTP credentials
+    // Create email transporter for Office 365
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
+      host: process.env.SMTP_HOST || 'smtp.office365.com',
       port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: process.env.SMTP_SECURE === 'true',
+      secure: false, // Office 365 uses STARTTLS on port 587
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      tls: {
+        ciphers: 'SSLv3',
+        rejectUnauthorized: false,
+      },
     });
+
+    // For Office 365, the from address must match the authenticated user
+    const fromAddress = process.env.SMTP_USER || 'info@advisory.kw.gt.com';
 
     // Format the email content
     const emailContent = `
@@ -170,9 +176,9 @@ This email was sent from the Grant Thornton Kuwait Advisory website contact form
 </html>
     `.trim();
 
-    // Send email
+    // Send email to advisory team
     await transporter.sendMail({
-      from: process.env.SMTP_FROM || '"GT Advisory Website" <noreply@advisory.kw.gt.com>',
+      from: fromAddress,
       to: 'info@advisory.kw.gt.com',
       replyTo: email,
       subject: `New Advisory Inquiry: ${advisoryService} - ${firstName} ${surname} [${referenceNumber}]`,
@@ -230,8 +236,9 @@ This email was sent from the Grant Thornton Kuwait Advisory website contact form
 </html>
     `.trim();
 
+    // Send confirmation email to the user
     await transporter.sendMail({
-      from: process.env.SMTP_FROM || '"Grant Thornton Advisory" <noreply@advisory.kw.gt.com>',
+      from: fromAddress,
       to: email,
       subject: `Thank you for contacting Grant Thornton Advisory [${referenceNumber}]`,
       html: confirmationHtml,
