@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Phone, Mail, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export function FloatingCTA() {
   const [isMounted, setIsMounted] = useState(false);
@@ -67,22 +68,24 @@ export function FloatingCTA() {
 
                 {/* Options */}
                 <div className="p-4 space-y-3">
-                  <Link
-                    href="/advisory/contact"
-                    className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-[#4F2D7F]/5 transition-colors group"
+                  <a
+                    href="https://wa.me/96522443900"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-[#25D366]/5 transition-colors group"
                   >
-                    <div className="w-10 h-10 rounded-full bg-[#4F2D7F]/10 flex items-center justify-center group-hover:bg-[#4F2D7F] transition-colors">
-                      <MessageCircle className="w-5 h-5 text-[#4F2D7F] group-hover:text-white transition-colors" />
+                    <div className="w-10 h-10 rounded-full bg-[#25D366]/10 flex items-center justify-center group-hover:bg-[#25D366] transition-colors">
+                      <FaWhatsapp className="w-5 h-5 text-[#25D366] group-hover:text-white transition-colors" />
                     </div>
                     <div className="flex-1">
-                      <p className="font-medium text-gray-900">Contact Form</p>
-                      <p className="text-sm text-gray-500">Send us a message</p>
+                      <p className="font-medium text-gray-900">WhatsApp</p>
+                      <p className="text-sm text-gray-500">Chat with us</p>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#4F2D7F] group-hover:translate-x-1 transition-all" />
-                  </Link>
+                    <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#25D366] group-hover:translate-x-1 transition-all" />
+                  </a>
 
                   <a
-                    href="tel:+96522055999"
+                    href="tel:+96522443900"
                     className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-[#4F2D7F]/5 transition-colors group"
                   >
                     <div className="w-10 h-10 rounded-full bg-[#CF2020]/10 flex items-center justify-center group-hover:bg-[#CF2020] transition-colors">
@@ -90,7 +93,7 @@ export function FloatingCTA() {
                     </div>
                     <div className="flex-1">
                       <p className="font-medium text-gray-900">Call Us</p>
-                      <p className="text-sm text-gray-500">+965 2205 5999</p>
+                      <p className="text-sm text-gray-500">+965 2244 3900 Ext: 263</p>
                     </div>
                     <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#CF2020] group-hover:translate-x-1 transition-all" />
                   </a>
