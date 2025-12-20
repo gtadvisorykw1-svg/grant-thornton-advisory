@@ -20,104 +20,18 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/Scr
 import { useState, useMemo } from 'react';
 
 // Sample Job Data
-const allJobs = [
-  {
-    id: 1,
-    title: 'Senior Consultant - Internal Audit',
-    department: 'Business Risk Services',
-    category: 'Operational Advisory',
-    location: 'Kuwait City',
-    type: 'Full-time',
-    level: 'Experienced',
-    posted: '2024-12-15',
-    description: 'Lead internal audit engagements for diverse clients across various industries. Evaluate internal controls, identify risks, and provide recommendations for improvement.',
-    requirements: ['CPA/CIA certification', '4-6 years experience', 'Strong analytical skills'],
-  },
-  {
-    id: 2,
-    title: 'Manager - Valuations',
-    department: 'Transaction Advisory',
-    category: 'Transaction Advisory',
-    location: 'Kuwait City',
-    type: 'Full-time',
-    level: 'Experienced',
-    posted: '2024-12-12',
-    description: 'Manage valuation engagements including business valuations, intangible asset valuations, and purchase price allocations.',
-    requirements: ['CFA/CPA preferred', '6-8 years experience', 'Financial modeling expertise'],
-  },
-  {
-    id: 3,
-    title: 'Associate - Corporate Governance',
-    department: 'Operational Advisory',
-    category: 'Operational Advisory',
-    location: 'Kuwait City',
-    type: 'Full-time',
-    level: 'Entry Level',
-    posted: '2024-12-10',
-    description: 'Support corporate governance projects including board evaluations, policy development, and regulatory compliance assessments.',
-    requirements: ["Bachelor's degree in Business/Finance", '1-3 years experience', 'Knowledge of CMA regulations'],
-  },
-  {
-    id: 4,
-    title: 'IT Advisory Consultant',
-    department: 'IT Advisory',
-    category: 'Operational Advisory',
-    location: 'Kuwait City',
-    type: 'Full-time',
-    level: 'Experienced',
-    posted: '2024-12-10',
-    description: 'Conduct IT audits, cybersecurity assessments, and technology risk evaluations for clients across various sectors.',
-    requirements: ['CISA/CISSP certification', '3-5 years experience', 'IT audit background'],
-  },
-  {
-    id: 5,
-    title: 'Senior Manager - Fraud & Forensics',
-    department: 'Business Risk Services',
-    category: 'Operational Advisory',
-    location: 'Kuwait City',
-    type: 'Full-time',
-    level: 'Senior',
-    posted: '2024-12-08',
-    description: 'Lead forensic investigation engagements, manage client relationships, and develop the fraud investigation practice.',
-    requirements: ['CFE certification', '8+ years experience', 'Investigation expertise'],
-  },
-  {
-    id: 6,
-    title: 'Analyst - Due Diligence',
-    department: 'Transaction Advisory',
-    category: 'Transaction Advisory',
-    location: 'Kuwait City',
-    type: 'Full-time',
-    level: 'Entry Level',
-    posted: '2024-12-05',
-    description: 'Support financial due diligence engagements including data analysis, quality of earnings, and working capital assessments.',
-    requirements: ["Bachelor's in Accounting/Finance", '0-2 years experience', 'Excel proficiency'],
-  },
-  {
-    id: 7,
-    title: 'Consultant - Human Capital Advisory',
-    department: 'Human Capital Advisory',
-    category: 'Operational Advisory',
-    location: 'Kuwait City',
-    type: 'Full-time',
-    level: 'Experienced',
-    posted: '2024-12-03',
-    description: 'Deliver HR consulting projects including organizational design, compensation benchmarking, and performance management.',
-    requirements: ['HR certification preferred', '3-5 years HR consulting', 'Strong communication skills'],
-  },
-  {
-    id: 8,
-    title: 'Summer Intern - Advisory',
-    department: 'Multiple Departments',
-    category: 'Internship',
-    location: 'Kuwait City',
-    type: 'Internship',
-    level: 'Intern',
-    posted: '2024-12-01',
-    description: 'Join our summer internship program and gain hands-on experience across various advisory service lines.',
-    requirements: ['Currently enrolled in university', 'Business/Finance major', 'Strong academic record'],
-  },
-];
+const allJobs: {
+  id: number;
+  title: string;
+  department: string;
+  category: string;
+  location: string;
+  type: string;
+  level: string;
+  posted: string;
+  description: string;
+  requirements: string[];
+}[] = [];
 
 // Filter options
 const departments = ['All Departments', 'Business Risk Services', 'Transaction Advisory', 'IT Advisory', 'Human Capital Advisory', 'Multiple Departments'];
