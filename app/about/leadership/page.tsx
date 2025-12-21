@@ -12,7 +12,8 @@ const leaders = [
   {
     name: 'Abdullatif M. Al Aiban',
     title: 'Managing Partner',
-    image: '/Aiban.png',
+    image: '/Aiban-optimized.webp',
+    fallbackImage: '/Aiban-optimized.png',
     bio: "As Managing Partner of Grant Thornton Advisory Services Al-Aiban & Al-Qatami Co., Abdullatif M. Al Aiban leads the firm's strategic direction and oversees the delivery of world-class advisory services to clients across Kuwait and the region.",
     description: "Under his leadership, the firm has established itself as one of Kuwait's leading advisory practices, known for combining innovative thinking with a distinctive personal touch. His vision centers on providing services and products that are truly unique—built on deep understanding of client needs and a proactive interest in their success.",
     quote: "We listen, obtain a thorough understanding of your needs and then work closely with you to provide meaningful and functional solutions. We take a proactive interest in each client's success.",
@@ -20,7 +21,8 @@ const leaders = [
   {
     name: 'Tarek Shashaah',
     title: 'Partner',
-    image: '/Tarek.png',
+    image: '/Tarek-optimized.webp',
+    fallbackImage: '/Tarek-optimized.png',
     bio: 'Tarek Shashaah serves as Partner at Grant Thornton Kuwait, bringing extensive experience in advisory services to growth-oriented entrepreneurial companies. He plays a key role in ensuring the firm delivers best-in-class international tools, methodologies, and risk management standards across all engagements.',
     description: 'His approach to client service emphasizes empowerment and transformation—helping businesses gain thorough control over their operations while working toward their envisioned goals.',
     quote: "We believe in empowering your thoughts and ideas and translating them into reality. Grant Thornton Advisory Kuwait symbolizes the 'power of all kinds' that vests in our clients—thorough control over their businesses and the intent to fulfill the vision envisaged for their dreams.",
@@ -82,13 +84,15 @@ export default function LeadershipPage() {
                   <div className={`grid md:grid-cols-2 gap-8 md:gap-12 items-start ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                     {/* Image */}
                     <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                      <div className="relative aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden">
+                      <div className="relative aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden bg-gray-100">
                         <Image
                           src={leader.image}
                           alt={leader.name}
                           fill
                           className="object-cover object-top"
                           sizes="(max-width: 768px) 100vw, 400px"
+                          priority={index === 0}
+                          quality={75}
                         />
                       </div>
                     </div>

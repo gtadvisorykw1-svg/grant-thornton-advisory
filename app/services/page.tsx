@@ -227,7 +227,7 @@ export default function ServicesPage() {
           <div className="max-w-6xl mx-auto px-4 md:px-8">
             <div className="bg-gradient-to-br from-[#4F2D7F] to-[#281440] rounded-2xl p-8 md:p-12 text-center">
               <h2 className="heading-lg text-white mb-4">
-                Ready to unlock your organization's potential?
+                Ready to unlock your organization&apos;s potential?
               </h2>
               <p className="body-lg text-white/80 mb-8 max-w-2xl mx-auto">
                 Connect with our advisory team to start the conversation about how we can help you achieve your goals.

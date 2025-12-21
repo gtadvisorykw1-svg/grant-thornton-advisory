@@ -1,30 +1,36 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Phone, Mail, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
 import { FaWhatsapp } from 'react-icons/fa';
 
+// Custom hook for scroll position that works with SSR
+function useScrollPosition() {
+  return useSyncExternalStore(
+    (callback) => {
+      window.addEventListener('scroll', callback);
+      return () => window.removeEventListener('scroll', callback);
+    },
+    () => window.scrollY,
+    () => 0 // Server snapshot
+  );
+}
+
+// Custom hook for hydration-safe mounting
+function useHasMounted() {
+  return useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
+}
+
 export function FloatingCTA() {
-  const [isMounted, setIsMounted] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const isMounted = useHasMounted();
+  const scrollY = useScrollPosition();
+  const isVisible = isMounted && scrollY > 300;
   const [isExpanded, setIsExpanded] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    
-    const handleScroll = () => {
-      // Show after scrolling 300px
-      setIsVisible(window.scrollY > 300);
-    };
-
-    // Check initial scroll position
-    handleScroll();
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Don't render anything on server to avoid hydration mismatch
   if (!isMounted) {

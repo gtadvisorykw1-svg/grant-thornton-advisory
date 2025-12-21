@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 // Department options
@@ -75,12 +75,8 @@ export default function ApplyPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  // Update position if URL param changes
-  useEffect(() => {
-    if (prefilledPosition) {
-      setFormData(prev => ({ ...prev, position: prefilledPosition }));
-    }
-  }, [prefilledPosition]);
+  // Initialize position from URL param (using initializer function pattern)
+  // Note: Position is already initialized from prefilledPosition in useState
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;

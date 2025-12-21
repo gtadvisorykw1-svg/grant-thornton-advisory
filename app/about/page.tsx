@@ -3,7 +3,7 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import Link from 'next/link';
-import { Home, ChevronRight, ArrowRight, CheckCircle, Globe, Users, Building2, Award } from 'lucide-react';
+import { Home, ChevronRight, ArrowRight, CheckCircle, Globe, Building2, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 

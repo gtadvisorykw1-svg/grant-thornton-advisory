@@ -13,13 +13,10 @@ import {
   Briefcase, 
   Globe, 
   Heart, 
-  Lightbulb, 
   Target, 
   Shield, 
   Zap, 
   Award,
-  MapPin,
-  Clock,
   TrendingUp,
   BookOpen,
   Coffee,
@@ -127,39 +124,6 @@ const benefits = [
   },
 ];
 
-// Sample Job Openings
-const jobOpenings = [
-  {
-    title: 'Senior Consultant - Internal Audit',
-    department: 'Business Risk Services',
-    location: 'Kuwait City',
-    type: 'Full-time',
-    posted: '2 days ago',
-  },
-  {
-    title: 'Manager - Valuations',
-    department: 'Transaction Advisory',
-    location: 'Kuwait City',
-    type: 'Full-time',
-    posted: '5 days ago',
-  },
-  {
-    title: 'Associate - Corporate Governance',
-    department: 'Operational Advisory',
-    location: 'Kuwait City',
-    type: 'Full-time',
-    posted: '1 week ago',
-  },
-  {
-    title: 'IT Advisory Consultant',
-    department: 'IT Advisory',
-    location: 'Kuwait City',
-    type: 'Full-time',
-    posted: '1 week ago',
-  },
-];
-
-// Testimonials
 const testimonials = [
   {
     quote: "Grant Thornton gave me the platform to grow from an associate to a senior manager. The mentorship and exposure to diverse projects accelerated my career beyond my expectations.",

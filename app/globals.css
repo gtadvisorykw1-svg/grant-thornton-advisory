@@ -242,6 +242,8 @@
   p {
     font-size: 18px;
     line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
   }
   h1 {
     font-family: "GT Walsheim", Arial, Helvetica, sans-serif;
@@ -316,6 +318,8 @@
   font-size: 20px;
   line-height: 28px;
   font-weight: 300;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .body-lg {
@@ -323,6 +327,8 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .body-md {
@@ -330,6 +336,8 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .body-sm {
@@ -337,6 +345,8 @@
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .button-text {

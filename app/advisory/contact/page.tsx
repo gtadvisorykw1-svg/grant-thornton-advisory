@@ -181,7 +181,7 @@ export default function AdvisoryContactPage() {
     <div className="min-h-screen bg-white" suppressHydrationWarning>
       <Header />
       <section className="bg-gradient-to-br from-[#4f2d7f] to-[#2b144d] text-white py-12 sm:py-16 md:py-20">
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           <nav className="mb-6 sm:mb-8">
             <ol className="flex flex-wrap items-center gap-1 sm:gap-2 text-xs sm:text-sm text-white/70">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
